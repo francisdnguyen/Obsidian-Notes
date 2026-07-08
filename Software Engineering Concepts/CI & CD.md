@@ -1,0 +1,81 @@
+- **CI/CD (Continuous Integration and Continuous Delivery/Deployment)**
+	- Automates the process of building, testing, and releasing applications.
+	- Plays a key role in DevOps by streamlining collaboration between development and operations teams.
+	- Automates code integration, testing, and deployment workflows.
+	- Reduces manual effort while improving software quality.
+	- Smaller, frequent updates replace large risky releases.
+- **Before CI/CD**
+	- ![[Before CI & CD.png]]
+	- All branches were merged at the end, which often caused big conflicts and broken builds.
+	- Testing and building were done manually at the end of final stages, so bugs were discovered very late and costly to fix.
+	- Deployment was a long and risky process because everything was released together in one big update.
+	- Teams were divided: developers -> code. testers -> testing. operations -> servers
+- **After CI/CD**
+	- ![[After CI & CD.png]]
+	- Developers commit code frequently to a shared repository.
+	- CI performs build and test automatically.
+	- Bug detected early and fixed quickly.
+	- Continuous Delivery ensures code is always release-ready.
+	- Continuous Deployment enables automatic production releases.
+	- Smaller, frequent updates replace large risky releases.
+	- Improves collaboration and transparency across teams.
+- **Three Pillars of CI/CD**
+	- **Continuous Integration (CI)**: Integrating code changes frequently to avoid conflicts and ensure code stability.
+		- Goal: Prevent "integration hell" caused by late code merging.
+		- Process: Developers merge code changes into the main branch frequently (daily).
+		- Automation: Each commit triggers an automated build and unit tests.
+		- Outcome: If tests fail, the build is rejected and developers are notified immediately.
+	- **Continuous Delivery (CD)**: Ensures that the application is always ready for release, with minimal manual effort.
+		- Goal: Keep the codebase in a release-ready state at all times.
+		- Process: After CI passes, code is deployed to a staging or testing environment.
+		- Automation: Integration, system, and performance tests are executed automatically.
+		- Release: Deployment to production is manual, typically triggered when needed.
+	- **Continuous Deployment (CD)**: Takes automation a step further by removing manual intervention in releases.
+		- Goal: Enable fully automated and faster production releases.
+		- Process: After all tests pass, code is automatically deployed to production.
+		- Automation: End-to-end pipeline runs without human involvement.
+		- Requirement: Requires highly reliable and comprehensive automated testing.
+- **CI Workflow**: Represents the automated process that starts when developers commit code and ends with build status.
+	- ![[CI Workflow.png]]
+	- Developer writes and commits code.
+	- CI tool builds the application and automated tests are executed.
+	- If issues occur, a notification is sent out and the developer fixes the code. 
+	- If it is successful, the code is merged and the application becomes ready for deployment.
+- **CI/CD Workflow**: How CI combined with CD enables faster, safer, and more reliable software releases.
+	- ![[CI & CD Workflow.png]]
+	- CI performs build and test automatically.
+	- Code moves to acceptance testing and once passed, it is deployed to staging environment. Further validation is done.
+	- Continuous delivery is manual and continuous deployment is automatic deployment to production.
+	- Smoke tests validate production release.
+- **Common CI/CD Tools**:
+	- Jenkins, GitHub Actions, GitLab CI/CD, Concourse, GoCD, Spinnaker, Screwdriver
+- **CI/CD Pipeline**: Automated workflow that enables teams to build, test, and deploy code efficiently and reliably.
+	- ![[CI & CD Pipeline.png]]
+	- Developers push code to version control.
+	- Code is compiled and built and automated testing is performed.
+	- Application is packaged and code moves through release pipeline.
+	- Delivered to users after validation.
+	- **Components**
+		- ![[CI & CD Pipeline Componenets.png]]
+		- **Commit Change**
+			- Developers commit code to a version control system (Git) and code changes are tracked and versioned.
+		- **Build Trigger**
+			- Version control system detects new commits and automatically triggers the build process.
+		- **Build**
+			- Code is compiled and packaged into a deployable artifact. Dependencies are resolved during this stage using tools such as Maven, Gradle, and Docker.
+		- **Build Outcome Notification**
+			- Notifies developers whether the build passed or failed to help identify issues early in the process.
+		- **Run Execution**
+			- Executes unit, integration, and end-to-end tests to detect bugs and issues early in the pipeline and ensures the code meets quality standards.
+		- **Test Outcome Notification**
+			- Notifies developers about test results to help quickly resolve debugging and issue resolution.
+		- **Deliver Build to Staging**
+			- Code is deployed to a production-like environment to allow final testing before release and helps identify issues before production deployment.
+		- **Deploy to Production**
+			- Code is deployed to the production environment and makes the application and its features available to end users.
+- **Practices for a Healthy Pipeline**
+	- Fast Feedback: Detect failures quickly to fix issues early.
+	- Commit Frequently: Avoid large merges and integration conflicts.
+	- Fix Broken Builds Immediately: Keep the main branch stable.
+	- Environment Parity: Ensure staging matches production.
+	- Infrastructure as Code (IaC): use tools like Terraform or CloudFormation.

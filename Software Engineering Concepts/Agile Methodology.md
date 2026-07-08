@@ -1,0 +1,59 @@
+- A way to manage projects by breaking them into smaller parts.
+	- Focuses on working together and making constant improvements.
+	- Focuses on delivering smaller pieces of work regularly instead of one big launch.
+	- Allows team to adapt to changes quickly and provide customer value faster.
+- **Key Principles**
+	- **Customer Satisfaction**: Deliver valuable software early and continuously to keep customers happy.
+	- **Welcome Change**: Accept changing requirements even in later stages of development.
+	- **Frequent Delivery**: Deliver working software in short, regular intervals.
+	- **Collaboration**: Ensure daily cooperation between business teams and developers.
+	- **Motivated Teams**: Build projects around skilled, trusted, and motivated individuals.
+	- **Face-to-Face Communication**: Prefer direct communication for better clarity and understanding.
+	- **Working Software**: Measure progress based on functional software, not just documentation.
+	- **Sustainable Pace**: Maintain a consistent and manageable development speed.
+	- **Technical Excellence**: Focus on good design and high-quality coding practices.
+	- **Simplicity**: Minimize unnecessary work and keep solutions simple.
+	- **Self-Organizing Teams**: Encourage teams to take ownership and make decisions.
+	- **Continuous Improvement**: Regularly reflect and improve processes for better results.
+- **Agile Software Development Life Cycle (SDLC)**]
+	- ![[Agile Development Methodology.png]]
+	- 1.) **Requirement Gathering**: The project team identifies and documents the needs and expectations of various stakeholders, including clients, users, and subject matter experts. It involves the Project's Scope, objectives, requirements, establishing a budget, schedule, creating a project plan, and allocating resources.
+	- 2.) **Design**: Developing a high-level system architecture. Creating detailed specifications, which include data structures, algorithms, and interfaces. Planning for the software's user interface.
+	- 3.) **Development (Coding)**: Writing code for the software. Conducting unit testing to verify the functionality of individual components.
+	- 4.) **Testing**:
+		- **Integration Testing**: Ensuring that different components work together.
+		- **System Testing**: Testing the entire system as a whole.
+		- **User Acceptance Testing**: Confirming that the software meets user requirements.
+		- **Performance Testing**:  Assessing the system's speed, scalability, and stability.
+	- 5.) **Deployment**: Deploying the software to a production environment. Into the real world where people can use it to make sure it works smoothly. Providing training and support for end-users.
+	- 6.) **Review (Maintenance)**: Addressing and resolving any issues that may arise after deployment. Releasing updates and patches to enhance the software and address problems.
+- **When to use the Agile Methodology**
+	- Unclear or Changing Requirements
+	- Complex Projects
+	- Customer Focus
+	- Quick Time-to-Market
+	- Small to Medium Teams
+	- Collaboration
+	- Regular Updates
+	- Continuous Improvement
+- **Types of Agile Methodologies**:
+	- **Kanban**: Visual workflow and limits work-in-progress (WIP) to manage continuous tasks and improve delivery speed.
+	- **Scrum**: Works in short sprints with defined roles and meetings to deliver focused and incremental results.
+	- Extreme Programming (XP), Adaptive Project Framework (APF), Extreme Project Management (XPM), Adaptive Software Development (ASD), Dynamic Systems Development (DSDM), Feature Drive Development (FDD)
+- **Limitations**
+	- Less Documentation, more work on projects.
+	- Challenges in Large Organizations where it would be difficult to schedule daily meetups and face to face communication.
+	- Need for Senior Programmers to make critical decisions during the development of software.
+	- Limited Scope Control, could cause project to go over budget or miss deadlines.
+	- Lack of predictability.
+- **Agile Methodology vs Waterfall Model**
+	- Waterfall follows a step-by-step approach with clearly defined phases.
+	- It is a linear and sequential approach where each phase is completed before moving to the next.
+	- Development follows fixed phases such as requirement -> design -> development -> testing -> deployment.
+	- Customer involvement is limited mainly to the initial and final stages.
+	- Changes are difficult and costly once a phase is completed.
+	- Testing only after the whole development phase is finished.
+	- Best suited for simple, stable, and well-defined projects.
+	- ![[Waterfall Model.png]]
+- **Popular Agile Tools**
+	- Jira, Trello, Asana, Pivotal Labs, ClickUp, Monday.com
