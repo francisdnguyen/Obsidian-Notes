@@ -180,13 +180,15 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3dc3b47118b7c316",
+  "active": "31ef425cac5e6699",
   "lastOpenFiles": [
     "LeetCode/Arrays & Hashing.md",
     "LeetCode/Linked Lists.md",
+    "Software Engineering Concepts/AI Engineering.md",
     "LeetCode/Two Pointers.md",
     "Languages/GO.md",
     "Attachments/2026-07-06.md",

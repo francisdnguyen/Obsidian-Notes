@@ -62,7 +62,7 @@
 	     return dummy.next
 	  ```
 - **Linked List Cycle**
-	- e
+	- Given the beginning of a linked list `head`, return `true` if there is a cycle in the linked list. Otherwise, return `false`.
 	- slow moves one step at a time, fast moves two steps at a time
 	- ```python
 	  def hasCycle(self, head: Optional[ListNode]) -> bool:
@@ -132,7 +132,7 @@
 	- Creates a hash map and we traverse the list copying each item as we go.
 	- ```python
 	  def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-		  oldToCopy = collections.defaultdict(lambda: None(0))
+		  oldToCopy = collections.defaultdict(lambda: Node(0))
 		  oldToCopy[None] = None
 		  cur = head
 		  while cur:
@@ -143,11 +143,102 @@
 		  return oldToCopy[head]
 	  ```
 - **Add 2 Numbers**
-	- w
-	- w
+	- You are given two **non-empty** linked lists, `l1` and `l2`, where each represents a non-negative integer. The digits are stored in **reverse order**, e.g. the number 321 is represented as `1 -> 2 -> 3 ->` in the linked list. Return the sum of the two numbers as a linked list.
+	- Recursion since lists are stored in reverse order. Keep a carry for addition.
 	- ```python
 	  def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-		  
+		  def add(l1, l2, carry)
+			  if l1 is None and l2 is None and carry == 0:
+				  return None
+			  val1 = l1.val if l1 else 0
+			  val2 = l2.val if l2 else 0
+			  total = val1 + val2 + carry
+			  carry, val = divmod(total, 10)
+			  next_node = add(l1.next if l1 else None, 
+							  l2.next if l2 else None, carry)
+			  return ListNode(val, next_node)
+	  return add(l1, l2, 0)
 	  ```
+	  - Iteration
+	  - ```python
+	    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+		    dummy = cur = ListNode()
+		    while l1 or l2 or carry:
+			    v1 = l1.val if l1 else 0
+			    v2 = l2.val if l2 else 0
+			    total = v1 + v2 + carry
+			    carry = total // 10
+			    val = total % 10
+			    cur.next = ListNode(val)
+			    cur = cur.next
+			    l1 = l1.next if l1 else None
+			    l2 = l2.next if l2 else None
+			return dummy.next
+	    ```
 - **Find the Duplicate Number**
-- **LRU Cache**
+	- You are given an array of integers `nums` containing `n + 1` integers. Each integer in `nums` is in the range `[1, n]` inclusive. There is exactly **one repeated integer** in `nums`, and every other integer appears at most once. Return the repeated integer.
+	- Because one number is duplicated, two indices will point into the **same chain**, creating a **cycle** — exactly like a linked list with a loop.
+	- ```python
+	  def findDuplicate(self, nums: List[int]) -> int:
+		  slow, slow2, fast = 0, 0, 0
+		  while True:
+			  slow = nums[slow]
+			  fast = nums[nums[fast]]
+			  if slow == fast:
+				  break
+		  while True:
+			  slow = nums[slow]
+			  slow2 = nums[slow2]
+			  if slow == slow2:
+				  return slow
+	  ```
+- **Merge K Sorted Lists**
+	- You are given an array of `k` linked lists `lists`, where each list is sorted in ascending order. Return the **sorted** linked list that is the result of merging all of the individual linked lists.
+	- We divide and conquer. We iterate through the lists and merge two lists at a time and we keep going until the length is 1.
+	- ```python
+	  def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+		  def mergeList(self, l1, l2):
+			  dummy = node = ListNode()
+			  while l1 and l2:
+				  if l1.val < l2.val:
+					  node.next = l1
+					  l1 = l1.next
+				  else:
+					  node.next = l2
+					  l2 = l2.next
+				  node = node.next
+			  node.next = l1 or l2
+			  return dummy.next
+		  
+		  if not lists or len(lists) == 0:
+			  return None
+		  while len(lists) > 1:
+			  mergedLists = []
+			  for i in range(0, len(lists), 2):
+				  l1 = list[i]
+				  l2 = list[i + 1] if (i + 1) < len(lists) else None
+				  mergedLists.append(mergedList(l1, l2))
+			  lists = mergedLists
+			  return lists[0]	  
+	  ```
+	- **Reverse Nodes in K-Group**
+		- You are given the head of a singly linked list `head` and a positive integer `k`. You must reverse the first `k` nodes in the linked list, and then reverse the next `k` nodes, and so on. If there are fewer than `k` nodes left, leave the nodes as they are. Return the modified list after reversing the nodes in each group of `k`.
+		- Recursion
+		- ```python
+			  def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+			  curr = head
+			  group = 0
+			  while curr and group < k:
+				  curr = curr.next
+				  group += 1
+			  if group == k:
+				  curr = reverseKGroup(curr, k)
+				  while group > 0:
+					  temp = head.next
+					  head.next = curr
+					  curr = head
+					  head = temp
+					  group -= 1
+				  head = curr
+			  return head
+		  ```
