@@ -79,4 +79,53 @@ After performing at most `k` replacements, return the length of the longest su
 		  return matches == 26
  	  ```
 - **Minimum Window Substring**
+	- Given two strings `s` and `t`, return the shortest **substring** of `s` such that every character in `t`, including duplicates, is present in the substring. If such a substring does not exist, return an empty string `""`.
+	- Expand the window by moving the right pointer `r` and adding characters into a `window` map. Once the window has all required characters (i.e., it "covers" `t`), we try to **shrink it from the left** with pointer `l` to make it as small as possible while still valid.
+	- ```python
+	  def minWindow(self, s: str, t: str) -> str:
+		  if t == "":
+			  return ""
+		  countT, window = {}, {}
+		  for c in t:
+			  countT[c] = 1 + countT.get(c, 0)
+		  have = 0
+		  need = len(countT)
+		  res, resLen = [-1, -1], float('infinity')
+		  l = 0
+		  for r in range(len(s)):
+			  c = s[r]
+			  window[c] = 1 + window.get(c, 0)
+			  if c in countT and window[c] == countT[c]:
+				  have += 1
+			  while have == need:
+				  if (r - l + 1) < resLen:
+					  res = [l, r]
+					  resLen = r - l + 1
+				  window[s[l]] -= 1
+				  if s[l] in countT and window[s[l]] < countT[s[l]]:
+					  have -= 1
+				  l += 1
+		  l, r = res
+		  return s[l : r + 1] if resLen != float('infinity') else ""
+		  
+	  ```
 - **Sliding Window Maximum**
+	- You are given an array of integers `nums` and an integer `k`. There is a sliding window of size `k` that starts at the left edge of the array. The window slides one position to the right until it reaches the right edge of the array. Return a list that contains the maximum element in the window at each step.
+	- The key idea is to keep the deque storing **indices** of elements in **decreasing order of their values**. This guarantees that: the **front** of the deque always holds the index of the current window’s maximum, smaller elements behind a bigger one are useless (they can never become the max later),  so we remove them when pushing a new number and if the element at the front falls out of the window, we remove it.
+	- ```python
+	  def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+		  output = []
+		  q = deque()
+		  l = r = 0
+		  while r < len(nums):
+			  while q and nums[q[-1]] < nums[r]:
+				  q.pop()
+			  q.append(r)
+			  if l > q[0]:
+				  q.popleft()
+			  if (r + 1) >= k:
+				  output.append(nums[q[0]])
+				  l += 1
+			  r += 1
+		  return output
+	  ```
