@@ -33,6 +33,24 @@
 		  return False
 	  ```
 - **Koko Eating Bananas**
+	- You are given an integer array `piles` where `piles[i]` is the number of bananas in the `ith` pile. You are also given an integer `h`, which represents the number of hours you have to eat all the bananas. You may decide your bananas-per-hour eating rate of `k`. Each hour, you may choose a pile of bananas and eats `k` bananas from that pile. If the pile has less than `k` bananas, you may finish eating the pile but you can not eat from another pile in the same hour. Return the minimum integer `k` such that you can eat all the bananas within `h` hours.
+		- It has to be a number from 1 to max in piles. We used binary search from this range and we record the smallest speed.
+	- ```python
+	  def minEatingSpeed(self, piles: List[int], h: int) -> int:
+		  l, r = 1, max(piles)
+		  res = r
+		  while l <= r:
+			  m = (r + l) // 2
+			  totalTime = 0
+			  for p in piles:
+				  totalTime += math.ceil(float(p) / m)
+			  if totalTime <= h:
+				  res = m
+				  r = m - 1
+			  else
+				  l = m + 1
+		  return res
+	  ```
 - **Find Minimum in Rotated Sorted Array**
 - **Search in Rotated Sorted Array**
 - **Time Based Key Value Store**
