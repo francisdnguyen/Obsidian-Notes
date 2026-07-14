@@ -93,5 +93,32 @@
 				  return m
 		  return -1
 	  ```
-- **Time Based Key Value Store**
 - **Median of Two Sorted Arrays**
+	- You are given two integer arrays `nums1` and `nums2` of size `m` and `n` respectively, where each is sorted in ascending order. Return the [median](https://en.wikipedia.org/wiki/Median) value among all elements of the two arrays.
+	- First makes sure `A` is the smaller array so that the binary search is as fast as possible. Then it uses binary search to choose a partition (cut) in `A`, and calculates where the partition in `B` must be so that the left side contains half of all the elements. At each step, it checks whether every value on the left side is less than or equal to every value on the right side (`Aleft <= Bright` and `Bleft <= Aright`). If this condition is true, it has found the correct split: for an odd total number of elements, the median is the smallest value on the right side, and for an even total, it is the average of the largest value on the left side and the smallest value on the right side. If the partition is incorrect, it moves the binary search left or right until the correct partition is found.
+	- ```python
+	  def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+		  A, B = nums1, nums2
+		  total = len(nums1) + len(nums2)
+		  half = total // 2
+		  if len(A) > len(B):
+			  A, B = B, A
+		  l, r = 0, len(A) - 1
+		  while True:
+			  i = l + ((r - l) // 2)
+			  j = half - i - 2
+			  Aleft = A[i] if i >= 0 else float("-infinity")
+			  Aright = A[i + 1] if (i + 1) < len(A) else float("infinity")
+			  Bleft = B[i] if j >= 0 else float("-infinity")
+			  Bright = B[j + 1] if (j + 1) < len(B) else float("infinity")
+			  
+			  if Aleft <= Bright and Aright <= Bleft:
+				  if total % 2:
+					  return min(Aright, Bright)
+				  else:
+					  return ((min(Aright, Bright) + max(Aleft, Bleft)) // 2)
+			  elif Aleft > Bright:
+				  r = i - 1
+			  else:
+				  l = i + 1
+	  ```
