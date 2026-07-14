@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/Stack.md",
+                "file": "LeetCode/Linked Lists.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Stack"
+              "title": "Linked Lists"
             }
           }
         ]
@@ -186,16 +186,16 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "LeetCode/Two Pointers.md",
-    "LeetCode/Arrays & Hashing.md",
     "LeetCode/Binary Search.md",
     "LeetCode/Sliding Window.md",
+    "LeetCode/Stack.md",
+    "LeetCode/Two Pointers.md",
+    "LeetCode/Arrays & Hashing.md",
     "LeetCode/Linked Lists.md",
     "Software Engineering Concepts/AI Engineering.md",
     "Languages/GO.md",
     "Attachments/2026-07-06.md",
     "Languages",
-    "LeetCode/Stack.md",
     "Attachments/MinStack Code.png",
     "Software Engineering Concepts/CI & CD.md",
     "LeetCode",

@@ -16,7 +16,7 @@
 	- ```python
 	  def lengthOfLongestSubstring(self, s: str) -> int:
 		  charSet = set()
-		  maxL, l = 0
+		  maxL, l = 0, 0
 		  for r in range(len(s)):
 			  while s[l] in charSet:
 				  charSet.remove(s[l])
