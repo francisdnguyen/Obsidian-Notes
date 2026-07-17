@@ -1,0 +1,22 @@
+- For the GO backend, we need to pick a Postgres driver
+	- pgx used directly gives native access to Postgres-specific things this project actually needs — most importantly, custom type registration. This is exactly why pgvector's Go integration (pgvector-go/pgx) hooks into pgx's connection setup, not into database/sql's generic driver interface. Using database/sql at the start would have meant a rework later when pgvector support was needed.
+- We establish a connection pool in db.go
+	- If everything shared a single Postgres connection, requests would either serialize behind it (defeating the point of concurrency) or corrupt each other (Postgres connections aren't safe to use from multiple goroutines at once). A pool hands out separate connections to concurrent callers and reuses them once released — this is precisely what lets `HandleSubmit`, `HandleStatus`, and a background ingestion goroutine all touch the database at the same time safely, later.
+- YouTube Transcript Ingestion with Supadata
+	- Getting captions out requires either scraping YouTube's internal caption endpoints (fragile, unofficial, ToS-questionable) or a third-party service that's already solved that problem.
+- Chunking
+	- Chunking exists to **regroup these small segments into ~500-word blocks** — big enough to carry real context, small enough to stay specific to one topic rather than blending in unrelated parts of the video.
+	- Count the incoming segment's words (`strings.Fields` — a simple whitespace split).
+	- **Before adding it**, check: would adding this segment push the currently-building chunk over `maxWords`? If so, close the current chunk now (`newChunk`) rather than let it keep growing unbounded.
+	- When closing a chunk, don't start the next one empty — carry forward a _tail_ of the just-closed chunk (`trailingOverlap`) so there's continuity across the boundary.
+	- Add the current segment to the (possibly now-reset) buffer, and keep going.
+	- At the very end, whatever's left in the buffer becomes the final chunk (there's no next segment to trigger a close, so this has to happen explicitly after the loop).
+- Embeddings
+	-  So every chunk's text has to be converted into a **vector**: a fixed-length list of numbers positioned in space such that texts with similar meaning end up numerically close together. That conversion is what an embedding model does, and it's the one thing that makes semantic search possible instead of plain keyword matching.
+- Synchronous Ingestion Pipeline
+	-  This piece is the first one that actually **writes real rows to Postgres**, wiring transcript → chunk → embed together into one real, callable flow that produces a genuine `videos` row and genuine `chunks` rows with real embeddings. Before this, the pipeline existed only as four separate, unconnected functions.
+- Async Wrapper + HTTP Server
+	- A real product needs an actual HTTP surface — something a browser/frontend can call. - We need the HTTP Server
+	- Async Wrapper - accept the request instantly, do the real work in the background, let the client poll for progress
+- Q&A Endpoint
+	- This is the piece that actually turns that stored data into an answer to a real question. Without it, the product has ingested video after video and has nothing to show for it;
