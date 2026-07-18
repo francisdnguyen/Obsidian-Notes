@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/Arrays & Hashing.md",
+                "file": "LeetCode/Two Pointers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arrays & Hashing"
+              "title": "Two Pointers"
             }
           }
         ]
@@ -186,6 +186,7 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
+    "LeetCode/Arrays & Hashing.md",
     "LeetCode/Two Pointers.md",
     "Backend for Verbatim.md",
     "Software Engineering Concepts/PostgreSQL.md",
@@ -197,7 +198,6 @@
     "LeetCode/Binary Search.md",
     "LeetCode/Sliding Window.md",
     "LeetCode/Stack.md",
-    "LeetCode/Arrays & Hashing.md",
     "Software Engineering Concepts/AI Engineering.md",
     "Attachments/2026-07-06.md",
     "Languages",

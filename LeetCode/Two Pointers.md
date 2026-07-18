@@ -7,7 +7,7 @@
 		  while l < r:
 			  while l < r and not self.alphaNum(s[l]):
 				  l += 1
-			  while > l and not self.alphaNum(s[r]):
+			  while r > l and not self.alphaNum(s[r]):
 				  r -= 1
 			  if s[l].lower() != s[r].lower():
 				  return False
@@ -67,14 +67,15 @@
 	- ```python
 	  def maxArea(self, heights: List[int]) -> int:
 		  l, r = 0, len(heights) - 1
-          maxArea = 0
-          while l < r:
-	          maxArea = max(maxArea, min(heights[l], heights[r]) * (r - l))
-              if heights[l] <= heights[r]:
-	              l += 1
-              else:
-                  r -= 1
-          return maxArea
+		  maxArea = 0
+		  while l < r:
+			  area = min(heights[l], heights[r]) * (r - l)
+			  maxArea = max(area, maxArea)
+			  if heights[l] <= heights[r]:
+				  l += 1
+			  else:
+				  r -= 1
+		  return maxArea
 	  ```
 - **Trapping Rainwater**
 	- You are given an array of non-negative integers `height` which represent an elevation map. Each value `height[i]` represents the height of a bar, which has a width of `1`. Return the maximum area of water that can be trapped between the bars.
