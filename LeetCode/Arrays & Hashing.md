@@ -71,23 +71,25 @@
 	- In encode, we would create a string that would keep track of the length of the individual strings, a hashtag, and then the actual string. In decode, we would use substring slicing to get the length, readjust i and j, and then substring slice the word into the list.
 	- ```python
 	  def encode(self, strs: List[str]) -> str:
-        res = ""
-        for s in strs:
-            res += str(len(s)) + '#' + s
-        return res
-    def decode(self, s: str) -> List[str]:
-        res = []
-        i = 0
-        while i < len(s):
-            j = i
-            while s[j] != '#':
-                j += 1
-            length = int(s[i:j])
-            i = j + 1
-            j = i + length
-            res.append(s[i:j])
-            i = j
-        return res
+		  res = []
+		  for s in strs:
+			  res.append(str(len(s)))
+			  res.append('#')
+			  res.append(s)
+		  return "".join(res)
+	  def decode(self, s: str) -> List[str]:
+		  res = []
+		  i = 0
+		  while i < len(s):
+			  j = i
+			  while s[j] != '#':
+				  j += 1
+			  length = int(s[i:j])
+			  i = j + 1
+			  j = i + length
+			  res.append(s[i:j])
+			  i = j
+		  return res
 	  ```
 - **Product of Array Except Self**:
 	- Given an integer array `nums`, return an array `output` where `output[i]` is the product of all the elements of `nums` except `nums[i]`.
