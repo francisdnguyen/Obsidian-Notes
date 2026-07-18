@@ -3,12 +3,12 @@
 	- To solve this, we would initialize an empty hash set. As we iterate through the array, we will store unseen numbers into the hash set and check whether it is in the hash set already. If we go through the whole array without finding a duplicate in the hash set, we would return false. Otherwise, return true.
 	- ```python
 	  def hasDuplicate(self, nums: List[int]) -> bool:
-        seen = set()
-        for num in nums:
-            if num in seen:
-                return True
-            seen.add(num)
-        return False
+		  seen = set()
+		  for num in nums:
+			  if num in seen:
+				  return True
+			  seen.add(num)
+		  return False
 	  ```
 - **Valid Anagram**:
 	- Given two strings `s` and `t`, return `true` if the two strings are anagrams of each other, otherwise return `false`.

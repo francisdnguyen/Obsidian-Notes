@@ -19,4 +19,9 @@
 	- A real product needs an actual HTTP surface — something a browser/frontend can call. - We need the HTTP Server
 	- Async Wrapper - accept the request instantly, do the real work in the background, let the client poll for progress
 - Q&A Endpoint
-	- This is the piece that actually turns that stored data into an answer to a real question. Without it, the product has ingested video after video and has nothing to show for it;
+	- This is the piece that actually turns that stored data into an answer to a real question. Without it, the product has ingested video after video and has nothing to show for it.
+	- Retrieve the top 5 most relevant transcript chunks, then sends those chunks to **GPT-4o** with a prompt that instructs it to answer only from the given excerpts and cite each one's `[MM:SS-MM:SS]` timestamp range.
+- Upload Ingestion (S3 + ffmpeg + Whisper)
+	- Second ingestion path (so when the user uploads a file instead of a YouTube link)
+	- It uploads the file to Amazon S3 first and then the background goroutine downloads it back down to a local temp file and then runs it through ffmpeg to extract a MP3 audio track and sends that to OpenAI Whisper for a real timestamped transcript.
+	- Feeds it to the same chunk->embed->store pipeline as YouTube
