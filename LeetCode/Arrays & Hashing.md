@@ -28,12 +28,12 @@
 	- We would create a previous map to store the value and indexes of each element. We would calculate the diff on each iteration and if it is in map, it would point to the index storing the diff for the current index value.
 	- ```python
 	  def twoSum(self, nums: List[int], target: int) -> List[int]:
-        prev = {}
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in prev:
-                return [prev[diff], i]
-            prev[n] = i
+		  prev = {}
+		  for i, n in enumerate(nums):
+			  diff = target - n
+			  if diff in prev:
+				  return [prev[diff], i]
+			  prev[n] = i
 	  ```
 - **Group Anagrams**:
 	- Given an array of strings `strs`, group all _anagrams_ together into sublists. You may return the output in **any order**.
