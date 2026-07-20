@@ -25,3 +25,6 @@
 	- Second ingestion path (so when the user uploads a file instead of a YouTube link)
 	- It uploads the file to Amazon S3 first and then the background goroutine downloads it back down to a local temp file and then runs it through ffmpeg to extract a MP3 audio track and sends that to OpenAI Whisper for a real timestamped transcript.
 	- Feeds it to the same chunk->embed->store pipeline as YouTube
+- JWT-based Authentication
+	-  Passwords get bcrypt-hashed (one-way, so a leaked database doesn't leak real passwords), and logging in exchanges an email/password for a signed JWT containing the user's ID — a token the server can verify with just a signature check, no session store needed to remember who's logged in. Every video endpoint now runs through a middleware that checks this token and rejects the request if it's missing or invalid, and the user ID for any action comes from that verified token rather than a client-supplied field, so there's nothing left to fake. On top of that, an ownership check means even a valid token only grants access to _your_ videos — a mismatch returns 404, not 403, so someone probing a random video ID can't even tell whether it exists.
+- 

@@ -67,30 +67,24 @@
 	  ```
 - **Search in Rotated Sorted Array**
 	- Given the rotated sorted array `nums` and an integer `target`, return the index of `target` within `nums`, or `-1` if it is not present.
-	- 1. **First binary search**: Find the pivot — the index of the smallest element. This tells us where the array was rotated. **Second binary search**: Decide which sorted half may contain the target, then run a standard binary search only on that half.
+	- Binary Search One Pass. A rotated sorted array are basically two sorted arrays stuck together.
 	- ```python
 	  def search(self, nums: List[int], target: int) -> int:
 		  l, r = 0, len(nums) - 1
-		  while l < r:
-			  m = l + ((r - l) // 2)
-			  if nums[m] > nums[r]:
-				  l = m + 1
-			  else:
-				  r = m
-		  pivot = l
-		  l, r = 0, len(nums) - 1
-		  if target >= nums[pivot] and target <= nums[r]:
-			  l = pivot
-		  else:
-			  r = pivot - 1
 		  while l <= r:
 			  m = l + ((r - l) // 2)
-			  if nums[m] < target:
-				  l = m + 1
-			  elif nums[m] > target:
-				  r = m - 1
-			  else:
+			  if nums[m] == target:
 				  return m
+			  if nums[l] <= nums[m]:
+				  if target < nums[l] or target > nums[m]:
+					  l = m + 1
+				  else:
+					  r = m - 1
+			  else:
+				  if target > nums[r] or target < nums[m]:
+					  r = m - 1
+				  else:
+					  l = m + 1
 		  return -1
 	  ```
 - **Median of Two Sorted Arrays**
