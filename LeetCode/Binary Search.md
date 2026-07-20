@@ -87,6 +87,33 @@
 					  l = m + 1
 		  return -1
 	  ```
+- **Time Based Key-Value Store**
+	- Design a time-based key-value data structure that can store multiple values for the same key at different time stamps and retrieve the key's value at a certain timestamp.
+	- - `TimeMap()` Initializes the object of the data structure.
+	- `void set(String key, String value, int timestamp)` Stores the key `key` with the value `value` at the given time `timestamp`.
+	- `String get(String key, int timestamp)` Returns a value such that `set` was called previously, with `timestamp_prev <= timestamp`. If there are multiple such values, it returns the value associated with the largest `timestamp_prev`. If there are no values, it returns `""`.
+	- ```python
+	  class TimeMap:
+		  def __init__(self):
+			  self.keyStore = {}
+		  
+		  def set(self, key: str, value: str, timestamp: int) -> None:
+			  if key not in self.keyStore:
+				  self.keyStore[key] = []
+			  self.keyStore[key].append([value, timestamp])
+		  
+		  def get(self, key: str, timestamp: int) -> str:
+			  res, values = "", self.keyStore.get(key, [])
+			  l, r = 0, len(values) - 1
+			  while l <= r:
+				  m = l + ((r - l) // 2)
+				  if values[m][1] <= timestamp:
+					  res = values[m][0]
+					  l = m + 1
+				  else:
+					  r = m - 1
+			  return res
+	  ```
 - **Median of Two Sorted Arrays**
 	- You are given two integer arrays `nums1` and `nums2` of size `m` and `n` respectively, where each is sorted in ascending order. Return the [median](https://en.wikipedia.org/wiki/Median) value among all elements of the two arrays.
 	- First makes sure `A` is the smaller array so that the binary search is as fast as possible. Then it uses binary search to choose a partition (cut) in `A`, and calculates where the partition in `B` must be so that the left side contains half of all the elements. At each step, it checks whether every value on the left side is less than or equal to every value on the right side (`Aleft <= Bright` and `Bleft <= Aright`). If this condition is true, it has found the correct split: for an odd total number of elements, the median is the smallest value on the right side, and for an even total, it is the average of the largest value on the left side and the smallest value on the right side. If the partition is incorrect, it moves the binary search left or right until the correct partition is found.
