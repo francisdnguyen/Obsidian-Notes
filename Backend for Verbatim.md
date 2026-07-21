@@ -27,4 +27,24 @@
 	- Feeds it to the same chunk->embed->store pipeline as YouTube
 - JWT-based Authentication
 	-  Passwords get bcrypt-hashed (one-way, so a leaked database doesn't leak real passwords), and logging in exchanges an email/password for a signed JWT containing the user's ID — a token the server can verify with just a signature check, no session store needed to remember who's logged in. Every video endpoint now runs through a middleware that checks this token and rejects the request if it's missing or invalid, and the user ID for any action comes from that verified token rather than a client-supplied field, so there's nothing left to fake. On top of that, an ownership check means even a valid token only grants access to _your_ videos — a mismatch returns 404, not 403, so someone probing a random video ID can't even tell whether it exists.
-- 
+-  RDS (Relational Database Service)
+A managed database — AWS runs and maintains the actual Postgres server for you (patching, backups, storage) instead of you installing Postgres on a machine yourself. We created verbatim-db, a PostgreSQL 16.14 instance with the pgvector extension enabled (needed for the vector similarity search your Q&A feature relies on). It has no public IP by default — it's meant to only be reachable from inside your AWS network (VPC), not the open internet, which is why we hit connectivity issues until we temporarily flipped "Public access" on for the one-time schema setup, then locked it back down.
+
+IAM (Identity and Access Management)
+AWS's permissions system — it controls who (or what) can do what to your AWS resources. We used two IAM concepts:
+
+Roles: an identity that isn't a person — we created verbatim-ec2-role and attached it to the EC2 instance itself. This lets the instance prove its identity to AWS automatically (via the instance metadata service) without ever storing a password/key file on disk.
+Policies: the actual permission grants attached to a role. verbatim-ec2-role's policy only allows three specific S3 actions (PutObject/GetObject/DeleteObject) on one specific bucket — deliberately narrow, so even if the instance were somehow compromised, the blast radius is limited to that one bucket.
+S3 (Simple Storage Service)
+Object storage — basically a place to store files (your uploaded videos/audio) that isn't a traditional filesystem. We created a dedicated production bucket (verbatim-uploads-prod-francisnguyen), private by default, and the backend reaches it using the IAM role above instead of a hardcoded access key/secret.
+
+EC2 (Elastic Compute Cloud)
+A virtual machine you rent by the hour — this is what actually runs your Go backend container 24/7. We picked Ubuntu as the OS, launched a t3.micro first (cheap, 1GB RAM), hit a real wall when it couldn't handle compiling the Docker image, and resized to t3.small (2GB RAM).
+
+Security Groups
+A virtual firewall attached to an EC2 instance or RDS database — a set of rules saying "only allow traffic in on these ports, from these sources." We used two:
+
+verbatim-ec2-sg: allows SSH (22, from specific admin IPs only), and HTTP/HTTPS (80/443, from anywhere — since real users need to reach it)
+verbatim-db-sg: allows Postgres (5432) only from verbatim-ec2-sg — meaning only your backend instance can talk to the database, nothing else on the internet can even attempt a connection
+VPC (Virtual Private Cloud)
+The private network your resources live inside — we didn't create one, just used the account's auto-created "Default VPC," which was enough here. It's what makes "RDS is only reachable from EC2" actually enforceable at the network level, not just the security-group level.
