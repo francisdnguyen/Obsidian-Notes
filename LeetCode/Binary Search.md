@@ -130,14 +130,14 @@
 			  j = half - i - 2
 			  Aleft = A[i] if i >= 0 else float("-infinity")
 			  Aright = A[i + 1] if (i + 1) < len(A) else float("infinity")
-			  Bleft = B[i] if j >= 0 else float("-infinity")
+			  Bleft = B[j] if j >= 0 else float("-infinity")
 			  Bright = B[j + 1] if (j + 1) < len(B) else float("infinity")
 			  
-			  if Aleft <= Bright and Aright <= Bleft:
+			  if Aleft <= Bright and Aright >= Bleft:
 				  if total % 2:
 					  return min(Aright, Bright)
 				  else:
-					  return ((min(Aright, Bright) + max(Aleft, Bleft)) // 2)
+					  return ((min(Aright, Bright) + max(Aleft, Bleft)) / 2)
 			  elif Aleft > Bright:
 				  r = i - 1
 			  else:

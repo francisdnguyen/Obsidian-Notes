@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Backend for Verbatim.md",
+                "file": "LeetCode/Binary Search.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Backend for Verbatim"
+              "title": "Binary Search"
             }
           }
         ]
@@ -186,8 +186,8 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "LeetCode/Binary Search.md",
     "Backend for Verbatim.md",
+    "LeetCode/Binary Search.md",
     "LeetCode/Two Pointers.md",
     "LeetCode/Arrays & Hashing.md",
     "Software Engineering Concepts/PostgreSQL.md",

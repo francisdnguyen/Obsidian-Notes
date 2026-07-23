@@ -47,4 +47,4 @@ A virtual firewall attached to an EC2 instance or RDS database — a set of rule
 verbatim-ec2-sg: allows SSH (22, from specific admin IPs only), and HTTP/HTTPS (80/443, from anywhere — since real users need to reach it)
 verbatim-db-sg: allows Postgres (5432) only from verbatim-ec2-sg — meaning only your backend instance can talk to the database, nothing else on the internet can even attempt a connection
 VPC (Virtual Private Cloud)
-The private network your resources live inside — we didn't create one, just used the account's auto-created "Default VPC," which was enough here. It's what makes "RDS is only reachable from EC2" actually enforceable at the network level, not just the security-group level.
+The private network your resources live inside — we didn't create one, just used the account's auto-created "Default VPC," which was enough here. It's what makes "RDS is only reachable from EC2" actually enforceable at the network level, not just the security-group level.x`
