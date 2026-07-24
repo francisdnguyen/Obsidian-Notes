@@ -194,6 +194,58 @@
 			  return True
 		  return (self.isSubtree(root.left, subRoot) 
 			  or self.isSubtree(root.right, subRoot))
-	  
-	  
 	  ```
+  - **Lowest Common Ancestor in BST**
+	  - Given a binary search tree (BST) where all node values are unique, and two nodes from the tree p and q, return the lowest common ancestor (LCA) of the two nodes.
+	  - Iteration
+	  - ```python
+	    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+		    curr = rot
+		    while curr:
+				    if p.val > curr.val and q.val > curr.val:
+					    curr = curr.right
+					elif p.val < curr.val and q.val < curr.val:
+						curr = curr.left
+					else:
+						return curr
+	    ```
+	- **Binary Tree Level Order Traversal**
+		- Given a binary tree root, return the level order traversal of it as a nested list, where each sublist contains the values of nodes at a particular level in the tree, from left to right.
+		- bfs
+		- ```python
+		  def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+			  res = []
+			  q = deque([root])
+			  while q:
+				  level = []
+				  for i in range(len(q)):
+					  node = q.popleft()
+					  if node:
+						  level.append(node.val)
+						  q.append(node.left)
+						  q.append(node.right)
+				  if level:
+					  res.append(level)
+			  return res  
+		  ```
+		  - dfs
+		  - ```python
+		    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+			    res = []
+			    def dfs(node, depth):
+				    if not node:
+					    return None
+					if len(res) == depth:
+						res.append([])
+					res[depth].append(node.val)
+					dfs(node.left, depth + 1)
+					dfs(node.right, depth + 1)
+				dfs(root, 0)
+				return res
+		    ```
+	- **Binary Tree Right Side View**
+	- **Count Good Nodes in Binary Tree**
+	- **Validate BST**
+	- **Kth Smallest Element in a BST**
+	- **Binary Tree Maximum Path Sum**
+	- **Serialize and Deserialize Binary Tree**
