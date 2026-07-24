@@ -1,0 +1,32 @@
+- A modern approach to software development that brings development and operations teams together to deliver applications faster and more reliably. Focuses on collaboration, automation, and continuous improvement across the software lifecycle.
+	- Encourages close collaboration between development and operations teams
+	- Automates build, test, and deployment processes to reduce errors.
+	- Enables faster and more frequent software releases.
+	- Improves system reliability, monitoring, and feedback loops.
+- **Stages**
+	- **Plan Stage**
+		- Work is broken down into tasks and user stories to ensure clarity and alignment.
+		- Collaboration between development and operations begins at this stage to avoid future bottlenecks.
+		- Common Tools: Jira, Confluence, Azure Boards, Trello
+	- **Code Stage**
+		- Code Reviews and branching strategies help maintain code quality and stability.
+		- Common Tools: Git, GitHub, GitLab, Bitbucket
+	- **Build Stage**
+		- Build automation ensures faster feedback and reduces manual error.
+		- Common Tools: Jenkins, GitLab CI/CD, Maven, Gradle, Docker
+	- **Test Stage**
+		- Different Testing methods includes unit, integration, performance, and security testing.
+		- Issues are identified early, that will reduce the cost and impact of failures.
+		- Common Tools: Selenium, JUnit, TestNG, SonarQube, JMeter
+	- **Release Stage**
+		- Deployment strategies are planned to minimize risk during production roll out.
+		- Common Tools: Git tags, Jenkins, GitLab CI/CD, ArgoCD
+	- **Deploy Stage**
+		- Deployment strategies such as blue-green, canary, or rolling updates are used to ensure minimal downtime
+		- Common Tools: Kubernetes, Helm, Ansible, Terraform
+	- **Operate and Monitor Stage**
+		- Application is continuously monitored to ensure availability and performance.
+		- Logs, metrics, and alerts help detect and resolve issues quickly.
+		- Feedback from monitoring and users is fed back into the planning stage for continuous improvement.
+		- Common Tools: Prometheus, Grafana, ELK Stack, Datadog, New Relic
+- 
