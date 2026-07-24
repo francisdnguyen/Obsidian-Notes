@@ -215,11 +215,11 @@
 		  while len(lists) > 1:
 			  mergedLists = []
 			  for i in range(0, len(lists), 2):
-				  l1 = list[i]
-				  l2 = list[i + 1] if (i + 1) < len(lists) else None
-				  mergedLists.append(mergedList(l1, l2))
+				  l1 = lists[i]
+				  l2 = lists[i + 1] if (i + 1) < len(lists) else None
+				  mergedLists.append(mergeList(l1, l2))
 			  lists = mergedLists
-			  return lists[0]	  
+		  return lists[0]	  
 	  ```
 	- **Reverse Nodes in K-Group**
 		- You are given the head of a singly linked list `head` and a positive integer `k`. You must reverse the first `k` nodes in the linked list, and then reverse the next `k` nodes, and so on. If there are fewer than `k` nodes left, leave the nodes as they are. Return the modified list after reversing the nodes in each group of `k`.

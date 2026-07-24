@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/Binary Search.md",
+                "file": "LeetCode/Linked Lists.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Binary Search"
+              "title": "Linked Lists"
             }
           }
         ]
@@ -186,8 +186,9 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "Backend for Verbatim.md",
+    "Software Engineering Concepts/DevOps.md",
     "LeetCode/Binary Search.md",
+    "Backend for Verbatim.md",
     "LeetCode/Two Pointers.md",
     "LeetCode/Arrays & Hashing.md",
     "Software Engineering Concepts/PostgreSQL.md",
