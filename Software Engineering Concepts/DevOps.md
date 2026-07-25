@@ -29,4 +29,20 @@
 		- Logs, metrics, and alerts help detect and resolve issues quickly.
 		- Feedback from monitoring and users is fed back into the planning stage for continuous improvement.
 		- Common Tools: Prometheus, Grafana, ELK Stack, Datadog, New Relic
+- **Strategic Adoption of the DevOps Model**
+	- Shifting from isolated operations to a unified, automated lifecycle
+	- Promote cross-functional collaboration and shared accountability between development, security, and operations.
+	- Evaluate current workflows to identify bottlenecks and establish requirements for scalability and security.
+	- Establish a clear strategy centered on deployment speed, system reliability, and team alignment.
+	- Choose automation tools for CI/CD, version control, and monitoring that fit your specific environment.
+	- Shift quality assurance left by integrating automated testing early in the development cycle.
+	- Use containerization to ensure environment consistency and simplify the deployment process.
+	- Use continuous monitoring and feedback loops to refine processes and improve performance incrementally.
+- **How AI and ML Improve DevOps**
+	- AI quickly scans the massive amounts of data created during coding and testing to tell teams exactly what to focus on.
+	- ML learns how your team works and suggests faster ways to set up servers or finish repetitive tasks.
+	- Instead of waiting for a crash, AI spots unusual patterns in code to warn you about bugs before they happen.
+	- AI watches your system 24/7 for hackers and can automatically block threats the moment it sees something suspicious.
+- **Learning DevOps**
+	- https://www.geeksforgeeks.org/devops/devops-prerequisites/
 - 
