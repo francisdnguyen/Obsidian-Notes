@@ -244,8 +244,155 @@
 				return res
 		    ```
 	- **Binary Tree Right Side View**
+		- You are given the `root` of a binary tree. Return only the values of the nodes that are visible from the right side of the tree, ordered from top to bottom.
+		- dfs
+		- ```python
+		  def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+			  res = []
+			  def dfs(node, depth):
+				  if not node:
+					  return None
+				  if depth == len(res):
+					  res.append(node.val)
+				  dfs(node.right, depth + 1)
+				  dfs(node.left, depth + 1)
+			  dfs(root, 0)
+		  ```
+		  - bfs
+		  - ```python
+		    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+			    res = []
+			    q = deque([root])
+			    while q:
+				    rightSide = None
+				    for i in range(len(q)):
+					    node = q.popleft()
+					    if node:
+						    rightSide = node
+						    q.append(node.left)
+						    q.append(node.right)
+					if rightSide:
+						res.append(rightSide.val)
+				return res
+		    ```
 	- **Count Good Nodes in Binary Tree**
+		- Within a binary tree, a node `x` is considered **good** if the path from the root of the tree to the node `x` contains no nodes with a value greater than the value of node `x` Given the root of a binary tree `root`, return the number of **good** nodes within the tree.
+		- dfs
+		- ```python
+		  def goodNodes(self, root: TreeNode) -> int:
+			  def dfs(node, maxVal):
+				  if not node:
+					  return 0
+				  res = 1 if node.val >= maxVal else 0
+				  maxVal = max(maxVal, node.val)
+				  res += dfs(node.left, maxVal)
+				  res += dfs(node.right, maxVal)
+				  return res
+			  dfs(root, root.val)
+		  ```
+		  - bfs
+		  - ```python
+		    def goodNodes(self, root: TreeNode) -> int:
+			    res = 0
+			    q = deque([root, float('-infinity')])'
+			    while q:
+				    node, maxval = q.popleft()
+				    if node.val >= maxval:
+					    res += 1
+					if node.left:
+						q.append((node.left, max(maxval, node.val)))
+					if node.right:
+						q.append((node.right, max(maxval, node.val)))
+				return res
+		    ```
 	- **Validate BST**
+		- Given the `root` of a binary tree, return `true` if it is a **valid binary search tree**, otherwise return `false`.
+		- dfs
+		- ```python
+		  def isValidBST(self, root: Optional[TreeNode]) -> bool:
+			  def dfs(node, left, right):
+				  if not node:
+					  return True
+				  if not (left < node.val < right):
+					  return False
+				  return dfs(node.left, left, node.val)
+					  and dfs(node.right, node.val, right)
+			  return dfs(root, float("-infinity"), float("infinity"))
+		  ```
+		  - bfs
+		  - ```python
+		    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+			    if not root:
+				    return True
+				q = deque([(root, float("-infinity"), float("infinity"))])
+				while q:
+					node, left, right = q.popleft()
+					if not (left < node.val < right):
+						return False
+					if node.left:
+						q.append((node.left, left, node.val))
+					if node.right:
+						q.append((node.right, node.val, right))
+				return True
+		    ```
 	- **Kth Smallest Element in a BST**
+		- Given the `root` of a binary search tree, and an integer `k`, return the `kth` smallest value (**1-indexed**) in the tree.
+		- Iterative dfs
+		- ```python
+		  def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+			  stack = []
+			  curr = root
+			  while stack or curr:
+				  while curr:
+					  stack.append(curr)
+					  curr = curr.left
+				  curr = stack.pop()
+				  k -= 1
+				  if k == 0:
+					  return curr.val
+				  curr = curr.right
+		  ```
+		  - recursive dfs
+		  - ```python
+		    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+			    count = k
+			    res = root.val
+			    def dfs(node):
+				    nonlocal count, res
+				    if not node:
+					    return
+					dfs(node.left)
+					if cnt == 0:
+						return
+					cnt -= 1
+					if cnt == 0:
+						res = node.val
+						return
+					dfs(node.right)
+				dfs(root)
+				return res
+		    ```
+	- **Construct Binary Tree from Preorder and Inorder Traversal**
+		- You are given two integer arrays `preorder` and `inorder`. `preorder` is the preorder traversal of a binary tree `inorder` is the inorder traversal of the same tree. Both arrays are of the same size and consist of unique values.
+		- dfs
+		- ```python
+		  def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+			  preIdx, inIdx = 0, 0
+			  def dfs(limit):
+				  nonlocal preIdx, inIdx
+				  if preIdx >= (preorder):
+					  return None
+				  if inorder[inIdx] == limit:
+					  inIdx += 1
+					  return None
+				  root = TreeNode(preorder[preIdx])
+				  preIdx += 1
+				  root.left = dfs(root.val)
+				  root.right = dfs(limit)
+				  return root
+			  return dfs(float('infinity'))
+		  ```
+
+Rebuild the binary tree from the preorder and inorder traversals and return its root.
 	- **Binary Tree Maximum Path Sum**
 	- **Serialize and Deserialize Binary Tree**
