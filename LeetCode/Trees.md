@@ -373,7 +373,7 @@
 				return res
 		    ```
 	- **Construct Binary Tree from Preorder and Inorder Traversal**
-		- You are given two integer arrays `preorder` and `inorder`. `preorder` is the preorder traversal of a binary tree `inorder` is the inorder traversal of the same tree. Both arrays are of the same size and consist of unique values.
+		- You are given two integer arrays `preorder` and `inorder`. `preorder` is the preorder traversal of a binary tree `inorder` is the inorder traversal of the same tree. Both arrays are of the same size and consist of unique values. Rebuild the binary tree from the preorder and inorder traversals and return its root.
 		- dfs
 		- ```python
 		  def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
@@ -392,7 +392,50 @@
 				  return root
 			  return dfs(float('infinity'))
 		  ```
-
-Rebuild the binary tree from the preorder and inorder traversals and return its root.
 	- **Binary Tree Maximum Path Sum**
+		- Given the `root` of a _non-empty_ binary tree, return the maximum **path sum** of any _non-empty_ path.
+		- dfs
+		- ```python
+		  def maxPathSum(self, root: Optional[TreeNode]) -> int:
+			  res = [root.val]
+			  def dfs(root):
+				  if not root:
+					  return 0
+				  leftMax = dfs(root.left)
+				  rightMax = dfs(root.right)
+				  leftMax = max(leftMax, 0)
+				  rightMax = max(rightMax, 0)
+				  res[0] = max(res[0], root.val + leftMax + rightMax)
+				  return root.val + max(leftMax, rightMax)
+			  dfs(root)
+			  return res[0]
+		  ```
 	- **Serialize and Deserialize Binary Tree**
+		- Implement an algorithm to serialize and deserialize a binary tree.
+		- dfs preorder
+		- ```python
+		  def serialize(self, root: Optional[TreeNode]) -> str:
+			  res = []
+			  def dfs(node):
+				  if not node:
+					  res.append("N")
+					  return
+				  res.append(str(node.val))
+				  dfs(node.left)
+				  dfs(node.right)
+			  dfs(root)
+			  return ",".join(res)
+		  def deserialize(self, data: str) -> Optional[TreeNode]:
+			  vals = data.split(",")
+			  self.i = 0
+			  def dfs():
+				  if vals[self.i] == "N":
+					  self.i += 1
+					  return None
+				  node = TreeNode(int(vals[self.i]))
+				  self.i += 1
+				  node.left = dfs()
+				  node.right = dfs()
+				  return node
+			  return dfs()
+		  ```
