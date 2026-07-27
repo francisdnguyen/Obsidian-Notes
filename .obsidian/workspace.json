@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/Tries.md",
+                "file": "LeetCode/Heap  & Priority Queue.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tries"
+              "title": "Heap  & Priority Queue"
             }
           }
         ]
@@ -187,8 +187,9 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "LeetCode/Trees.md",
     "LeetCode/Tries.md",
+    "LeetCode/Heap  & Priority Queue.md",
+    "LeetCode/Trees.md",
     "LeetCode/Linked Lists.md",
     "Software Engineering Concepts/DevOps.md",
     "LeetCode/Binary Search.md",
