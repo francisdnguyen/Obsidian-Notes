@@ -27,6 +27,42 @@
 		  return abs(stones[0])
 	  ```
 - **K Closest Points to Origin**
+	- You are given an 2-D array points where points[i] = [xi, yi] represents the coordinates of a point on an X-Y axis plane. You are also given an integer k. Return the k closest points to the origin (0, 0).
+	- ```python
+	  def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+		  maxHeap = []
+		  for x, y in points:
+		  dist = -(x ** 2 + y ** 2)
+		  heapq.heappush(maxHeap, [dist, x, y])
+		  if len (maxHeap) > k:
+			  heapq.heappop(maxHeap)
+		  res = []
+		  while maxHeap:
+			  dist, x, y = heapq.heappop(maxHeap)
+			  res.append([x, y])
+		  return res
+	  ```
+- **Kth Largest Element in a Stream**
+	- Given an unsorted array of integers `nums` and an integer `k`, return the `kth` largest element in the array.
+	- heap
+	- ```python
+	  def findKthLargest(self, nums: List[int], k: int) -> int:
+		  return heapq.nlargest(k, nums)[-1]
+	  ```
+	  - heap written out
+	  - ```python
+	    def findKthLargest(self, nums: List[int], k: int) -> int:
+		    minHeap = [-n for n in nums]
+		    heapq.heapify(minHeap)
+		    while k > 0:
+			    res = heapq.heappop(minHeap)
+			    k -= 1
+			return -res
+	    ```
+	    - quicksort
+	    - ```python
+	       def findKthLargest(self, nums: List[int], k: int) -> int:
+	      ```
 - **Task Scheduler**
 - **Design Twitter**
 - **Find Median From Data Stream**
