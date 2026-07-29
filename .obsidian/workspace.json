@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeetCode/Intervals.md",
+                "file": "LeetCode/Stack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Intervals"
+              "title": "Stack"
             }
           }
         ]
@@ -186,21 +186,21 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "LeetCode/Heap  & Priority Queue.md",
+    "LeetCode/Linked Lists.md",
+    "LeetCode/Sliding Window.md",
     "LeetCode/Intervals.md",
+    "LeetCode/Arrays & Hashing.md",
+    "LeetCode/Heap  & Priority Queue.md",
     "LeetCode/Tries.md",
     "LeetCode/Trees.md",
-    "LeetCode/Linked Lists.md",
     "Software Engineering Concepts/DevOps.md",
     "LeetCode/Binary Search.md",
     "Backend for Verbatim.md",
     "LeetCode/Two Pointers.md",
-    "LeetCode/Arrays & Hashing.md",
     "Software Engineering Concepts/PostgreSQL.md",
     "Software Engineering Concepts/Agile Methodology.md",
     "Software Engineering Concepts/CI & CD.md",
     "Languages/GO.md",
-    "LeetCode/Sliding Window.md",
     "LeetCode/Stack.md",
     "Software Engineering Concepts/AI Engineering.md",
     "Attachments/2026-07-06.md",
