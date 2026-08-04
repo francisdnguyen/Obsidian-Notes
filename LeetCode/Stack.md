@@ -1,4 +1,4 @@
-- **Valid Parentheses**:
+		- **Valid Parentheses**:
 	- The input string `s` is valid if and only if:
 		- Every open bracket is closed by the same type of close bracket.
 		- Open brackets are closed in the correct order.

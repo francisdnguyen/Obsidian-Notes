@@ -1,4 +1,4 @@
-- **Valid Palindrome**:
+	- **Valid Palindrome**:
 	- Given a string `s`, return `true` if it is a **palindrome**, otherwise return `false`.
 	-  We have a left pointer and a right pointer that will traverse the string from both endpoints and compare the characters. It will ignore any characters that are not letters or digits.
 	- ```python
@@ -43,7 +43,7 @@
 		  nums.sort()
 		  for i, a in enumerate(nums):
 			  if a > 0:
-				  continue
+				  break
 			  if i > 0 and a == nums[i - 1]:
 				  continue
 			  l, r = i + 1, len(nums) - 1
@@ -84,7 +84,7 @@
 	  def trap(self, height: List[int]) -> int:
 		  l, r = 0, len(height) - 1
 		  res = 0
-		  leftMax, rigthMax = height[l], height[r]
+		  leftMax, rightMax = height[l], height[r]
 		  
 		  while l < r:
 			  if leftMax < rightMax
