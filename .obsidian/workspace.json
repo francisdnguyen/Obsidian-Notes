@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering Concepts/Infrastructure as Code (IaC).md",
+                "file": "Tools/PyTorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Infrastructure as Code (IaC)"
+              "title": "PyTorch"
             }
           }
         ]
@@ -189,11 +189,17 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
+    "Attachments/Pasted image 20260823150116.png",
+    "Attachments/Pasted image 20260823145523.png",
+    "Attachments/Pasted image 20260823145147.png",
+    "Attachments/Pasted image 20260823143934.png",
+    "Software Engineering Concepts/Infrastructure as Code (IaC).md",
+    "Tools/PyTorch.md",
+    "Tools",
     "Attachments/Pasted image 20260822233307.png",
     "Attachments/Pasted image 20260822230459.png",
-    "Software Engineering Concepts/Kubernetes (K8s).md",
-    "Software Engineering Concepts/Infrastructure as Code (IaC).md",
-    "Software Engineering Concepts/Dockers.md",
+    "Tools/Kubernetes (K8s).md",
+    "Tools/Dockers.md",
     "Attachments/Pasted image 20260819002450.png",
     "Attachments/Pasted image 20260819001252.png",
     "Attachments/Pasted image 20260819001250.png",
@@ -201,13 +207,11 @@
     "Attachments/Pasted image 20260818235651.png",
     "Software Engineering Concepts/CI & CD.md",
     "LeetCode/Arrays & Hashing.md",
-    "Attachments/Agile Development Methodology.png",
-    "Attachments/Pasted image 20260818234512.png",
     "LeetCode/Backtracking.md",
     "Software Engineering Concepts/Debugging.md",
     "Software Engineering Concepts/Web Development Technologies.md",
     "Software Engineering Concepts/DevOps.md",
-    "Software Engineering Concepts/PostgreSQL.md",
+    "Tools/PostgreSQL.md",
     "LeetCode/Intervals.md",
     "LeetCode/Tries.md",
     "LeetCode/Heap  & Priority Queue.md",
@@ -223,11 +227,8 @@
     "Languages/GO.md",
     "Attachments/2026-07-06.md",
     "Languages",
-    "Attachments/MinStack Code.png",
     "LeetCode",
-    "Attachments/CI & CD Pipeline Componenets.png",
     "Attachments",
-    "Software Engineering Concepts",
-    "Welcome.md"
+    "Software Engineering Concepts"
   ]
 }
