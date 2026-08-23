@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering Concepts/Dockers.md",
+                "file": "Software Engineering Concepts/Kubernetes (K8s).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dockers"
+              "title": "Kubernetes (K8s)"
             }
           }
         ]
@@ -189,6 +189,8 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
+    "Software Engineering Concepts/Dockers.md",
+    "Software Engineering Concepts/Kubernetes (K8s).md",
     "Attachments/Pasted image 20260819002450.png",
     "Attachments/Pasted image 20260819001252.png",
     "Attachments/Pasted image 20260819001250.png",
@@ -197,7 +199,6 @@
     "Software Engineering Concepts/CI & CD.md",
     "LeetCode/Arrays & Hashing.md",
     "Attachments/Agile Development Methodology.png",
-    "Software Engineering Concepts/Dockers.md",
     "Attachments/Pasted image 20260818234512.png",
     "LeetCode/Backtracking.md",
     "Software Engineering Concepts/Debugging.md",
@@ -223,7 +224,6 @@
     "LeetCode",
     "Attachments/CI & CD Pipeline Componenets.png",
     "Attachments/CI & CD Pipeline.png",
-    "Attachments/CI & CD Workflow.png",
     "Attachments",
     "Software Engineering Concepts",
     "Welcome.md"

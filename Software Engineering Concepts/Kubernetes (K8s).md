@@ -1,0 +1,42 @@
+- Before K8s, there were problems with scalability issues, multi-cloud deployments, security & resource management, and rolling updates & zero downtime deployments
+- K8s was created to solve this and acted as the "brain" or orchestrator for your containers, handling the complex task of managing them at scale automatically.
+- Open-source platform that automates the deployment, scaling, and management of containerized applications.
+	- Origin: Developed by Google
+	- Launch: Officially released in 2014
+- **Features:**
+	- Automated Scheduling: Efficiently places containers on nodes for optimal resource use.
+	- Self-Healing: Automatically restarts, replaces, and reschedules failed containers.
+	- Rollouts & Rollbacks: Manages application updates and reverts when needed.
+	- Scaling & Load Balancing: Supports horizontal scaling and distributes traffic.
+	- Resource Optimization: Monitors and ensures efficient resource utilization.
+- **Monolithic vs Microservices**
+	- Monolithic architecture is where everything was interconnected and bundled into one big codebase. It made updates risky as a small bug could crash the whole system
+	- For microservices, each feature is built and deployed independently, which made applications more flexible and scalable.
+		- A new challenge was that companies now had to manage hundreds or thousands of small containerized services. Containers solved the packaging, but K8s was needed to act like a smart manager that automates deployment, scaling, and coordination of all those microservices.
+- **Terminologies in K8s**
+	- **Pod**
+		- Smallest unit you can deploy in k8s. It wraps one or more containers that need to run together, sharing the same network and storage. Containers inside a Pod can easily communicate and work as a single unit.
+	- **Node**
+		- A machine (physical or virtual) in a k8s cluster than runs your application. Each Node contains the tools needed to run Pods, including the container runtime (like Docker), the Kubelet (agent), and the Kube proxy (networking).
+	- **Cluster**
+		- A group of computers (called nodes) that work together to run our containerized applications. Nodes can be real machines or virtual ones.
+			- **Master node (Control Plane)**: Brain of the cluster. It makes decisions, like where to run applications, handles scheduling, and keeps track of everything.
+			- **Worker nodes**: The machines that actually run your apps inside containers. Each worker node has a Kubelet (agent), a container runtime (Docker or containerd), and tools for networking and monitoring.
+	- **Deployment**
+		- A Kubernetes object used to manage a set of Pods running your containerized applications. It provides declarative updates, meaning you tell Kubernetes what you want, and it figures out how to get there.
+	- **ReplicaSet**
+		- Ensures that the right number of identical Pods are running.
+	- **Service**
+		- A way to connect applications running inside your cluster. It gives your Pods a stable way to communicate, even if the Pods themselves keep changing.
+	- **Ingress**
+		- A way to manage external access to your services in a Kubernetes cluster. It provides HTTP and HTPPS routing to your services, acting as a reverse proxy.
+	- **ConfigMap**
+		- Stores configuration settings separately from the application, so changes can be made without modifying the actual code. Your application can read these settings from the ConfigMap at runtime, which makes it easy to update the settings without changing the app code. (Ex: database password or API key)
+	- **Secret**
+		- A way to store sensitive information securely in a Kubernetes cluster
+	- **Persistent Volume (PV)**
+		- A piece of storage in the cluster that you can use to store data and it doesn't get deleted when a Pod is removed or restarted.
+	- **Kubelet**
+		- Runs on each Worker Node and ensures Pods are running as expected.
+	- **Kube-proxy**
+		- Manages networking inside the cluster, ensuring different Pods can communicate.
