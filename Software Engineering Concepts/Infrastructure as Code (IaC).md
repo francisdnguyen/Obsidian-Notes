@@ -1,0 +1,50 @@
+- A modern DevOps practice where servers, networks, and cloud resources are automatically provisioned and managed using code instead of manual configuration. It helps maintain consistency, speed, and reliability across deployments.
+	- Automates infrastructure setup using scripts or configuration files.
+	- Ensures consistent environments across development, testing, and production.
+	- Enables faster and repeatable deployments.
+	- Reduces human errors caused by manual configuration.
+	- Improves scalabilit and disaster recovery.
+	- Supports version control for infrastructure changes (like Git).
+- It treats infrastructure components like software, allowing you to use development practices like version control, testing, and CI/CD pipelines.
+- ![[Pasted image 20260822230459.png]]
+- **Core Concepts of IaC**
+	- **Idempotency**
+		- One that can applied multiple times without changing the result beyond the initial application. Running your IaC script over and over will always result in the same defined state. If the infrastructure already matches the desired state, the tool will simply do nothing. This makes applying updates safe and predictable.
+	- **Immutable vs Mutable Infrastructure**
+		- **Mutable:** Traditional "pet" model. Servers are provisioned and then updated, patched, and modified in place over their lifetime. This process can lead to configuration drift and makes servers fragile and unique.
+		- **Immutable:** Modern "cattle" model favored by IaC. When a change is needed, the existing server is not modified. Instead, a new server is provisioned from a fresh image with the desired changes, and the old one is terminated. Ensures a clean, predictable, and fully reproducible state.
+- **Declarative vs Imperative Approaches**
+	- ![[Pasted image 20260822233307.png]]
+- **IaC in the DevOps Lifecycle**
+	- **Enabling CI/CD:** A code change can trigger a pipeline that only tests the application but also provisions or updates the necessary infrastructure to run it.
+	- **Creating Ephemeral Environments:** Teams can instantly spin up new, production-like environments for development, testing, or user acceptance testing (UAT). This allows developers to test their code in a realistic setting before merging, catching bugs earlier.
+	- **Breaking Down Silos:** It lives in the same VCS as the application code. Developers and operations engineers can collaborate on the same files, review changes through pull requests, and gain a shared understanding of the entire system.
+- **Popular IaC Tools**
+	- **Infrastructure Provisioning Tools**
+		- Used to create, modify, and destroy the foundational infrastructure components like virtual machines, networks, and databases. Almost always declarative.
+			- **Terraform:** A widely-used, open-source tool. Its key feature is being cloud-agnostic, supporting AWS, Azure, GCP, and many other providers. It uses a declarative language (HCL) and excels at managing complex, multi-cloud infrastructure.
+			- **AWS Cloud Formation:** Native IaC tool for AWS. Allows you to define AWS resources in JSON or YAML templates. Its main strength is its deep integration with all AWS services.
+	- **Configuration Management Tools**
+		- Specialize in configuring the software on existing servers. They install packages, manage configuration files, and ensure services are running.
+			- **Ansible:** A very popular open-source tool known for its simplicity and agentless architecture. It uses YAML "playbooks" that are easy to read and operates over SSH. It can be used for both imperative (tasks) and declarative (state) management.
+			- **Puppet:** A mature, agent-based tool that uses a declarative, model-driven approach. A central "Puppet Master" server manages the "Puppet Agents" on each machine, enforcing the desired state.
+			- **Chef:** A powerful and flexible agent-based tool that uses a Ruby-based DSL (Domain-Specific Language). It's often described as more imperative, giving developers fine-grained control over configuration steps using "recipes" and "cookbooks."
+			- **Salt Stack (Salt):** A high-speed, event-driven automation tool. It can operate in either an agent-based model or an agentless model over SSH and is known for its performance and scalability.
+	- **Container Orchestration Tools**
+		- Manage the infrastructure and lifecycle of containerized applications in a declarative way.
+			- **Kubernetes (K8s):** The de-facto standard for container orchestration. Kubernetes automates the deployment, scaling, and management of containerized applications. Users define the desired state of the application using YAML manifests.
+- **Common Use Cases for IaC**
+		- **Cloud Computing:** Provisioning and managing all cloud resources, such as virtual machines, storage, databases, and VPCs.
+		- **DevOps & CI/CD:** Automating the creation of development, staging, and production environments as part of a CI/CD pipeline.
+		- **Web Application Deployment:** Defining and deploying an entire application stack, including web servers, application servers, load balancers, and databases.
+		- **Networking:** Automating the deployment and management of networks, including creating and managing subnets, security groups, and firewalls.
+		- **Big Data:** Automating the deployment and management of big data infrastructure, such as setting up clusters for Apache Hadoop or Apache Spark.
+		- **Disaster Recovery:** Quickly and reliably recreating an entire production infrastructure in a different region in the event of a failure.
+- **Common Challenges and Pitfalls**
+		- **Learning Curve:**  Can be complex. Teams need to invest time in learning the specific tool and the declarative/immutable paradigms.
+		- **State Management:** The state file can become a bottleneck. If it gets corrupted, lost, or locked, it can be difficult to manage your infrastructure.
+		- **Configuration Drift:** This occurs when manual changes are made to the infrastructure, causing it to "drift" from the state defined in the code. This breaks the "single source of truth" and can cause future IaC runs to fail or have unintended consequences.
+		- **Tooling Complexity:**  Choosing the right tool can be difficult. A common stack is using Terraform for provisioning and Ansible for configuration, but this adds to the complexity.
+- **The Future of IaC: GitOps and AIOps**
+	- **GitOps:** Evolution of IaC. In a GitOps model, the Git repository is the single source of truth. An automated agent (like Argo CD or Flux) continuously monitors the repository and the live infrastructure, automatically applying any changes from Git to the cluster. This makes the CI/CD process even more automated and auditable.
+	- **AIOps:** The integration of AI and machine learning with IaC promises self-healing infrastructure. AI models could detect anomalies (e.g., a server crashing), identify the root cause, and automatically trigger an IaC-defined remediation (e.g., provisioning a new server) without human intervention.

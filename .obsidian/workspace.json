@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering Concepts/Kubernetes (K8s).md",
+                "file": "Software Engineering Concepts/Infrastructure as Code (IaC).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kubernetes (K8s)"
+              "title": "Infrastructure as Code (IaC)"
             }
           }
         ]
@@ -189,8 +189,11 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
-    "Software Engineering Concepts/Dockers.md",
+    "Attachments/Pasted image 20260822233307.png",
+    "Attachments/Pasted image 20260822230459.png",
     "Software Engineering Concepts/Kubernetes (K8s).md",
+    "Software Engineering Concepts/Infrastructure as Code (IaC).md",
+    "Software Engineering Concepts/Dockers.md",
     "Attachments/Pasted image 20260819002450.png",
     "Attachments/Pasted image 20260819001252.png",
     "Attachments/Pasted image 20260819001250.png",
@@ -223,7 +226,6 @@
     "Attachments/MinStack Code.png",
     "LeetCode",
     "Attachments/CI & CD Pipeline Componenets.png",
-    "Attachments/CI & CD Pipeline.png",
     "Attachments",
     "Software Engineering Concepts",
     "Welcome.md"
