@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "31ef425cac5e6699",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AWS/Cloud Essentials.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cloud Essentials"
-            }
-          },
-          {
             "id": "a9de7844499e45ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/SQS Simple Queue Service.md",
+                "file": "AWS/Lambda Serverless Computing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQS Simple Queue Service"
+              "title": "Lambda Serverless Computing"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -204,9 +189,12 @@
   },
   "active": "a9de7844499e45ea",
   "lastOpenFiles": [
-    "AWS/S3 Simple Storage Service.md",
+    "Attachments/Pasted image 20260902190953.png",
     "AWS/SQS Simple Queue Service.md",
+    "AWS/Lambda Serverless Computing.md",
+    "AWS/Lambda",
     "AWS/Cloud Essentials.md",
+    "AWS/S3 Simple Storage Service.md",
     "Tools/PyTorch.md",
     "AWS",
     "Attachments/Pasted image 20260823233418.png",
@@ -240,8 +228,6 @@
     "LeetCode/Two Pointers.md",
     "LeetCode/Linked Lists.md",
     "LeetCode/Sliding Window.md",
-    "LeetCode/Trees.md",
-    "Backend for Verbatim.md",
     "Languages",
     "LeetCode",
     "Attachments",
