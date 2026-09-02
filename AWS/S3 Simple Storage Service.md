@@ -1,0 +1,26 @@
+- **What is Amazon S3?**
+	- An object storage service offering industry-leading scalability, data availability, security, and performance.
+	- With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize and analyze data, and configure fine-tuned access controls to meet specific business and compliance requirements.
+- **Benefits**
+	- **Scalability**
+		- You can store virtually any amount of data with S3 all the way to exabytes with unmatched performance. S3 is fully elastic, automatically growing and shrinking as you add and remove data. No need to provision storage, and you pay only for what you use.
+	- **Durability and availability**
+		- Most durable storage in the cloud and industry leading availability.
+		- Designed to provide 99.99% (11 nines) data durability and 99.99% availability by default, backed by the strongest SLAs in the cloud.
+	- **Security and data protection**
+		- Unmatched security, data protection, compliance, and access control capabilities. Secure, private, and encrypted by default, and also supports numerous auditing capabilities to monitor access requests to your S3 resources.
+	- **Lowest price and highest**
+		- Delivers multiple storage classes with the best price performance for any workload and automated data lifecycle management, so you can store massive amounts of frequently, infrequently, or rarely accessed data in a cost-efficient way.
+		- Delivers the resiliency, flexibility, latency, and throughput, to ensure storage never limits performance.
+- **Data foundation for AI**
+	- Foundation of modern data lakes, enabling any organization to centralize structured and unstructured data, run analytics, and build applications without managing complex infrastructure.
+	- S3 Express One Zone is the fastest cloud object storage class, S3 Tables deliver native Apache Iceberg support, and S3 Vectors provides native vector storage and query for AI applications.
+- **Use cases**
+	- **High performance workloads**
+		- S3 Express One Zone storage class accelerates performance-intensive workloads with consistent single-digit millisecond latency and up to 10x faster data access than the S3 Standard storage class. It’s ideal for high-throughput workloads such as AI training and inference, real-time analytics, media processing, and interactive applications. As the fastest cloud object storage, S3 Express One Zone delivers faster access to the most frequently accessed dataset, improves compute efficiency, and lowers API request costs, reducing the total cost of ownership for the most demanding workloads.
+	- **AI**
+		- Access diverse data types at scale—including unstructured, structured, streaming, and vector data—to train, fine-tune, and customize models or improve contextual understanding through RAG. With direct integrations across AWS analytics and AI/ML services, S3 accelerates the path from data to intelligence without managing complex infrastructure.
+		- S3 simplifies data pipelines, protects critical information with security by default, and delivers cost-efficient scalability so you can support evolving AI workloads. Whether you’re developing domain-specific assistants, intelligent agents, or personalized generative AI experiences, S3 provides the trusted data foundation to build, customize, and deploy quickly and efficiently.
+	- **Semantic search**
+		- Enables AI applications to understand the meaning and context of data by using vector embeddings to represent relationships across content such as documents, images, and videos. Amazon S3 Vectors brings native vector support to S3, allowing you to store and query vectors alongside your source data in a fully serverless architecture.
+		- S3 Vectors makes it cost-effective to create and use large vector datasets to improve the memory and context of AI agents as well as conduct semantic search results of your S3 data. With S3 Vectors, developers can get started quickly, reduce operational complexity, and scale vector-driven semantic search and AI workloads efficiently on a durable, trusted foundation.

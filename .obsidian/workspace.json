@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Cloud Essentials"
             }
+          },
+          {
+            "id": "a9de7844499e45ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/SQS Simple Queue Service.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SQS Simple Queue Service"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -187,10 +202,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "31ef425cac5e6699",
+  "active": "a9de7844499e45ea",
   "lastOpenFiles": [
-    "Tools/PyTorch.md",
+    "AWS/S3 Simple Storage Service.md",
+    "AWS/SQS Simple Queue Service.md",
     "AWS/Cloud Essentials.md",
+    "Tools/PyTorch.md",
     "AWS",
     "Attachments/Pasted image 20260823233418.png",
     "Attachments/Pasted image 20260823233356.png",
@@ -225,8 +242,6 @@
     "LeetCode/Sliding Window.md",
     "LeetCode/Trees.md",
     "Backend for Verbatim.md",
-    "Languages/GO.md",
-    "Attachments/2026-07-06.md",
     "Languages",
     "LeetCode",
     "Attachments",
