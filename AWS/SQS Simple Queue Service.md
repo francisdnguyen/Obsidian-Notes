@@ -1,1 +1,20 @@
-- 
+- **How it works**
+	- Lets you send, store, and receive messages between software components at any volume, without losing messages or requiring other services to be available.
+- **Benefits**
+	- **Overhead made simple**
+		- Eliminate overhead with no upfront costs and without needing to manage software or maintain infrastructure.
+	- **Reliability at scale**
+		- Reliably deliver large volumes of data, at any level of throughput, without losing messages or needing other services to be available.
+	- **Security**
+		- Securely send sensitive data between applications and centrally manage your keys using AWS Key Management.
+	- **Cost-effective scalability**
+		- Scale elastically and cost-effectively based on usage so you don’t have to worry about capacity planning and preprovisioning.
+- **Use cases**
+	- **Increase application reliability and scale**
+		- Amazon SQS provides a simple and reliable way for customers to decouple and connect components (microservices) together using queues.
+	- **Decouple microservices and process event-driven applications**
+		- Separate frontend from backend systems, such as in a banking application. Customers immediately get a response, but the bill payments are processed in the background.
+	- **Ensure work is completed cost-effectively and on time**
+		- Place work in a single queue where multiple workers in an autoscale group scale up and down based on workload and latency requirements.
+	- **Maintain message ordering with deduplication**
+		- Process messages at high scale while maintaining the message order, allowing you to deduplicate messages.
