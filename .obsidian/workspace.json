@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tools/PyTorch.md",
+                "file": "AWS/Cloud Essentials.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PyTorch"
+              "title": "Cloud Essentials"
             }
           }
         ]
@@ -189,6 +189,9 @@
   },
   "active": "31ef425cac5e6699",
   "lastOpenFiles": [
+    "Tools/PyTorch.md",
+    "AWS/Cloud Essentials.md",
+    "AWS",
     "Attachments/Pasted image 20260823233418.png",
     "Attachments/Pasted image 20260823233356.png",
     "Attachments/Pasted image 20260823230745.png",
@@ -198,13 +201,11 @@
     "Attachments/Pasted image 20260823145147.png",
     "Attachments/Pasted image 20260823143934.png",
     "Software Engineering Concepts/Infrastructure as Code (IaC).md",
-    "Tools/PyTorch.md",
     "Tools",
     "Attachments/Pasted image 20260822233307.png",
     "Attachments/Pasted image 20260822230459.png",
     "Tools/Kubernetes (K8s).md",
     "Tools/Dockers.md",
-    "Attachments/Pasted image 20260819002450.png",
     "Software Engineering Concepts/CI & CD.md",
     "LeetCode/Arrays & Hashing.md",
     "LeetCode/Backtracking.md",
