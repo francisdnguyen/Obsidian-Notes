@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/S3 Simple Storage Service.md",
+                "file": "AWS/SQS Simple Queue Service.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "S3 Simple Storage Service"
+              "title": "SQS Simple Queue Service"
             }
           }
         ]
@@ -189,12 +189,12 @@
   },
   "active": "a9de7844499e45ea",
   "lastOpenFiles": [
+    "AWS/S3 Simple Storage Service.md",
     "AWS/Lambda Serverless Computing.md",
     "Attachments/Pasted image 20260902190953.png",
     "AWS/SQS Simple Queue Service.md",
     "AWS/Lambda",
     "AWS/Cloud Essentials.md",
-    "AWS/S3 Simple Storage Service.md",
     "Tools/PyTorch.md",
     "AWS",
     "Attachments/Pasted image 20260823233418.png",
