@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/Lambda Serverless Computing.md",
+                "file": "AWS/S3 Simple Storage Service.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lambda Serverless Computing"
+              "title": "S3 Simple Storage Service"
             }
           }
         ]
@@ -189,9 +189,9 @@
   },
   "active": "a9de7844499e45ea",
   "lastOpenFiles": [
+    "AWS/Lambda Serverless Computing.md",
     "Attachments/Pasted image 20260902190953.png",
     "AWS/SQS Simple Queue Service.md",
-    "AWS/Lambda Serverless Computing.md",
     "AWS/Lambda",
     "AWS/Cloud Essentials.md",
     "AWS/S3 Simple Storage Service.md",
@@ -208,7 +208,6 @@
     "Software Engineering Concepts/Infrastructure as Code (IaC).md",
     "Tools",
     "Attachments/Pasted image 20260822233307.png",
-    "Attachments/Pasted image 20260822230459.png",
     "Tools/Kubernetes (K8s).md",
     "Tools/Dockers.md",
     "Software Engineering Concepts/CI & CD.md",
