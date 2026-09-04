@@ -48,6 +48,39 @@
 
 ### Message Retention
 - Messages are kept in the queue for a configurable period (default 4 days, up to 14) if never consumed/deleted, then automatically expire.
+### Message Attributes
+- Optional structured metadata attached to a message, separate from the body.
+- Useful for routing/filtering without parsing the whole payload.
+
+### Batching
+- Send/receive/delete up to 10 messages in a single API call (`SendMessageBatch`, etc.).
+- Reduces cost and improves throughput vs. one-at-a-time requests.
+
+### Lambda + SQS Integration
+- Lambda can be configured to poll a queue automatically and invoke your function per message (or per batch) — no need to write the polling loop yourself.
+- Likely how this gets used in the roadmap: SQS triggers Lambda directly.
+
+### Pricing
+- Pay per request (API calls to send/receive/delete), not per message sitting idle in the queue.
+- Cheap at low volume; free tier covers a generous number of requests/month.
+
+### Region Scope
+- Queue names are unique within a region, not globally unique like S3 bucket names — much less of a naming headache.
+
+## Setting Up SQS in AWS
+
+1. **Sign in to the SQS console** — Search "SQS" in the AWS Console. Confirm you're in the intended region (queue names are only unique per-region).
+2. **Create a queue** — Click "Create queue." Choose Standard (simpler to start) or FIFO (name must end in `.fifo`). Give it a name.
+3. **Configure basic settings** — Leave defaults at first: visibility timeout (30s default), message retention (4 days default). Tune later once you understand your consumer's processing time.
+4. **Set access policy (optional at first)** — By default only your account can access the queue. Only edit this if another AWS account/service needs direct permission — otherwise IAM roles/policies handle it.
+5. **Send a test message** — Use "Send and receive messages" in the console to manually send and poll a test message, confirming the queue works before writing code.
+6. **Connect it with boto3**:
+```python
+   sqs = boto3.client('sqs')
+   sqs.send_message(QueueUrl=url, MessageBody='hello')      # send
+   sqs.receive_message(QueueUrl=url)                          # poll
+```
+   Same pattern as S3 — client object, then method calls mapped to API actions.
 
 ## How It Fits the Roadmap
 - SQS sits between S3/Lambda in event-driven pipelines: e.g., S3 event notification → message pushed to SQS → Lambda (or an autoscaled worker fleet) polls the queue and processes each file, at a pace it can handle rather than getting overwhelmed by a burst of uploads.
