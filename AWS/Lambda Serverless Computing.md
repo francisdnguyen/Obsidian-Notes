@@ -56,3 +56,46 @@
 ### Statelessness
 - Each invocation is independent — no guaranteed memory/state carried between calls (aside from opportunistic reuse during warm starts, which you shouldn't rely on).
 - Any state that needs to persist goes to an external store — S3, DynamoDB, etc.
+### Layers
+- Reusable packages of code/dependencies (e.g. a shared library) that multiple functions can attach without bundling the dependency into every deployment package individually.
+
+### Versions & Aliases
+- Publish immutable versions of a function; point an alias (e.g. `prod`, `staging`) at a specific version.
+- Enables safe rollouts/rollbacks without changing calling code.
+
+### Concurrency & Throttling
+- Lambda scales by running many instances of your function in parallel.
+- Account-level concurrency limit (default 1,000, raisable) — exceeding it causes throttling.
+- Relevant when processing SQS bursts: SQS buffers the load so Lambda pulls at a controlled pace instead of getting slammed all at once.
+
+### Deployment Packages
+- Your code + dependencies zipped up (or a container image for larger workloads), uploaded as the function's code.
+
+### Environment Variables
+- Configuration (API keys, table names, etc.) passed to the function without hardcoding — set per-function.
+
+### VPC Access
+- By default Lambda runs outside your VPC.
+- If it needs to reach a private resource (e.g. an RDS database in a VPC), you configure it to attach to that VPC.
+- Used to add meaningful cold-start latency; much less of an issue with modern Lambda networking.
+
+## Setting Up Lambda in AWS
+
+1. **Sign in to the Lambda console** — Search "Lambda" in the AWS Console. Same region-scoping as SQS — confirm you're in the intended region.
+2. **Create a function** — Click "Create function" → "Author from scratch" → name it → pick a runtime (Python). AWS auto-creates a basic IAM execution role at this step.
+3. **Write the handler code** — Use the inline code editor for small functions. Python handler pattern:
+```python
+   def lambda_handler(event, context):
+       # event = trigger's event data
+       # context = runtime info
+       return response
+```
+4. **Set permissions (IAM role)** — In the "Configuration" tab, review the auto-generated execution role. Attach permission policies if the function needs to touch other services (e.g. read from S3).
+5. **Add a trigger** — Click "Add trigger," pick an event source (S3 object created, SQS new message, API Gateway HTTP request are the common starting points), and configure which bucket/queue/API it listens to.
+6. **Test the function** — Use the "Test" tab with a sample event payload (AWS provides templates for S3/SQS-style events) and check execution results/logs before relying on the real trigger.
+7. **Invoke it with boto3 (optional)**:
+```python
+   lambda_client = boto3.client('lambda')
+   lambda_client.invoke(FunctionName=name, Payload=json.dumps(data))
+```
+   Same client/method pattern as S3 and SQS.
