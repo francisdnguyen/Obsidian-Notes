@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/Lambda Serverless Computing.md",
+                "file": "AWS/ECS Elastic Container Service.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lambda Serverless Computing"
+              "title": "ECS Elastic Container Service"
             }
           }
         ]
@@ -189,9 +189,10 @@
   },
   "active": "a9de7844499e45ea",
   "lastOpenFiles": [
+    "AWS/Lambda Serverless Computing.md",
+    "AWS/ECS Elastic Container Service.md",
     "AWS/SQS Simple Queue Service.md",
     "AWS/S3 Simple Storage Service.md",
-    "AWS/Lambda Serverless Computing.md",
     "Attachments/Pasted image 20260902190953.png",
     "AWS/Lambda",
     "AWS/Cloud Essentials.md",
