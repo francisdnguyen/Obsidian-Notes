@@ -55,3 +55,51 @@
 	- **Docker Stop:** Helps in halting the running containers gracefully shutting down the processes within them.
 	- **Docker Start:** Helps in restarting the stopped containers, resuming their operations from the previous state.
 	- **Docker Login:** Helps to login in to the docker registry enabling the access to private repositories.
+
+## Additional Concepts
+
+### Volumes & Persisting Data
+- Containers are ephemeral by default — filesystem changes are lost when a container is removed.
+- **Volumes** are Docker-managed storage that persists data independently of a container's lifecycle (e.g. a database's data directory).
+- Needed for any stateful containerized service (e.g. a containerized Postgres instance, as opposed to using a managed service like RDS).
+
+### Bind Mounts / Sharing Local Files with Containers
+- Maps a host machine directory directly into a container.
+- Commonly used in local development so code changes reflect inside the container without rebuilding the image.
+- Distinct from volumes: a bind mount points to a specific host path; a volume is managed entirely by Docker.
+
+### Publishing / Exposing Ports
+- A container's internal port (e.g. an app listening on 8080) must be mapped to a port reachable from outside the container.
+- Example: `docker run -p 8080:8080 my-image`
+- Without this, nothing outside the container can reach the running application.
+
+### Image Layers & Build Cache
+- Each Dockerfile instruction creates a cached layer.
+- Docker only rebuilds layers that changed since the last build — unchanged layers are reused from cache, making rebuilds much faster.
+- Common optimization: copy dependency manifest files (e.g. `package.json`, `go.mod`) and install dependencies *before* copying application source code, so dependency installation gets cached and isn't repeated on every code change.
+
+### Multi-Stage Builds
+- Use multiple `FROM` stages in one Dockerfile so the final image only contains what's needed to *run* the app, not what was needed to *build* it (compilers, dev dependencies, build tools).
+- Significantly shrinks final image size.
+- Directly relevant for compiled languages (e.g. Go) — the build stage can include the full toolchain, while the final stage copies over just the compiled binary.
+
+### Docker Compose
+- Defines and runs multi-container applications (e.g. app + database + cache) from a single YAML file.
+- One command (`docker compose up`) starts everything together with networking configured between containers, instead of manually running/linking each container.
+- Natural stepping stone toward ECS task definitions, which similarly group multiple containers to run together.
+
+### Additional Docker Commands
+- **`docker build`** — build an image from a Dockerfile.
+- **`docker tag`** — tag an image (e.g. for versioning or before pushing to a registry).
+- **`docker push`** — upload a tagged image to a registry (e.g. Docker Hub, Amazon ECR).
+- **`docker exec`** — run a command inside a running container (e.g. open a shell to debug: `docker exec -it <container> /bin/sh`).
+- **`docker logs`** — view a container's output/logs.
+- **`docker rm`** — remove a stopped container.
+- **`docker rmi`** — remove an unused image.
+
+### Dockerfile Instruction Basics
+- **`FROM`** — specifies the base image to build from.
+- **`RUN`** — executes a command at build time (e.g. installing dependencies).
+- **`COPY`** / **`ADD`** — brings files from the host into the image.
+- **`CMD`** / **`ENTRYPOINT`** — defines what runs when the container starts.
+- **`EXPOSE`** — documents which port the container listens on (doesn't actually publish it — that's done via `-p` at runtime).
