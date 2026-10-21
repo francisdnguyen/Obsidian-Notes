@@ -26,14 +26,12 @@
   - **AWS during the pandemic**: proactively helped customers cut costs instead of maximizing revenue, so they could reinvest and survive a tough economy.
   - **Kozmo (counterexample)**: one-hour delivery that customers loved, but it was uneconomical and gone within a couple of years.
 
-## My example: Feather Software client work
-- **Situation**: [client, what they asked you to build]
-- **Action**
-  - [How you figured out what they actually needed vs. what they asked for]
-  - [Where you pushed back on or refined the request]
-  - [What you built as a result]
-- **Result**: [outcome for the client: time saved, adoption, repeat business, referral]
-- **Customer Obsession angle**: worked backwards from the client's real need instead of building exactly what was first requested.
+## Common questions
+- Tell me about a time you went above and beyond for a customer.
+- Tell me about a time you had to balance what a customer wanted with what the business or project needed.
+- Tell me about a time you used customer feedback to change something.
+- Tell me about a time you had to figure out what a customer actually needed, not just what they asked for.
+
 # Ownership
 
 ## Definition
@@ -54,14 +52,11 @@
 - **Don't punt hard problems**: pull the right people together to find the best solution for customers.
 - **Whole-company, long-term view**: think about issues from the entire company's perspective, over the long run.
 
-## My example: UMD research lab image pipeline
-- **Situation**: the lab produced 200–300 test images per day, and they needed to be sorted by honeycomb model, tension strength, and date.
-- **Action**
-  - Built an automated Python/PowerShell pipeline that read EXIF metadata and sorted images into model, then tension, then date folders.
-  - Ran it on scheduled polling (Task Scheduler) so it kept up with new images without anyone triggering it.
-  - Read failures were caught, logged, and moved to a separate folder, so no image was silently lost.
-- **Result**: processed 1,200+ images per week and saved about 8 hours per week of manual work.
-- **Ownership angle**: built it to keep running after I was done (long-term over a quick fix) and handled failure cases so the lab wasn't left with a fragile tool.
+## Common questions
+- Tell me about a time you took on something outside your responsibilities.
+- Tell me about a time you saw a problem and fixed it without being asked.
+- Tell me about a time you made a decision that favored the long term over a short-term win.
+- Tell me about a time you had to finish or fix someone else's work.
 
 # Invent and Simplify
 
@@ -89,15 +84,11 @@
     - **The simplifying assumption**: put third-party offers on the same product detail pages as Amazon's own retail listings, where the traffic already was. Marketplace then took off.
     - **Result**: broader selection and lower prices for customers, and about 65% of units Amazon sells are now marketplace items.
 
-## My example: UMD research lab image pipeline
-- **Situation**: the lab produced 200–300 test images per day that had to be sorted by hand by honeycomb model, tension strength, and date.
-- **Action**
-  - Replaced manual sorting with an automated Python/PowerShell pipeline.
-  - Simplified the categorization by reading the EXIF metadata embedded in each image instead of relying on filenames or manual inspection.
-  - Split the model and tension values that were bundled together in the UserComment field.
-  - Organized output into a simple model → tension → date folder hierarchy, and ran it on scheduled polling so it needed no manual trigger.
-- **Result**: processed 1,200+ images per week and saved about 8 hours per week of manual work.
-- **Invent and Simplify angle**: turned a repetitive manual process into a hands-off automated one by finding a simpler source of truth (embedded metadata).
+## Common questions
+- Tell me about a time you found a simpler solution to a complex problem.
+- Tell me about a time you automated or improved a process.
+- Tell me about a time you came up with a new or creative approach.
+- Tell me about a time you borrowed an idea from somewhere else and applied it to your work.
 
 # Are Right, A Lot
 
@@ -119,14 +110,11 @@
 - **Challenge your own beliefs**: question your most closely held views. Are they really right? Is there a better way for customers?
 - **Ego doesn't matter**: in the best meetings, the team reaches the answer without the leader ever stating an opinion. The only thing that matters is the best outcome for customers.
 
-## My example: [project]
-- **Situation**: [a decision with incomplete information or a real disagreement]
-- **Action**
-  - [Your initial belief, and what made you question it]
-  - [Who or what you sought out: data, teammates, a client, testing]
-  - [How you weighed the options and decided]
-- **Result**: [outcome, and whether the call proved right]
-- **Are Right, A Lot angle**: made a sound call under ambiguity by seeking other perspectives and testing my own assumption instead of defending it.
+## Common questions
+- Tell me about a time you were wrong.
+- Tell me about a time you changed your mind after getting feedback or new information.
+- Tell me about a time you made a decision without enough data.
+- Tell me about a judgment call you made and how it turned out.
 
 # Learn and Be Curious
 
@@ -145,15 +133,11 @@
 - **Talking isn't changing**: plenty of people talk well about what they'll learn and change but never actually do it. Build a real plan, then follow through.
 - **Get a little better every day**: small, consistent improvement every day and every week.
 
-## My example: Verbatim (video RAG platform)
-- **Situation**: reviewing my resume, I found clear gaps: no Go, and no AWS services in my skills.
-- **Action**
-  - Built Verbatim, a RAG platform for YouTube videos and uploaded video files, for a Feather Software client, and chose Go specifically to learn the language on a project suited to its strengths (speed, low memory use, concurrent processing).
-  - Used Go's standard library (net/http with Go 1.22+ routing) instead of a router framework, to learn the language's own tools first.
-  - Deployed on AWS: Docker on EC2, PostgreSQL with pgvector on RDS, and S3 for media storage.
-  - Learned RAG end to end: transcription (Whisper), chunking, embeddings, and vector similarity search.
-- **Result**: [deployed for the client; add usage or performance numbers once you have them]
-- **Learn and Be Curious angle**: honestly assessed my own gaps, made a concrete plan to close them, and followed through by shipping a real production project instead of just studying.
+## Common questions
+- Tell me about a time you had to learn something new quickly.
+- What's something you taught yourself recently?
+- Tell me about a time you failed and what you learned from it.
+- Tell me about a time curiosity led you to improve something.
 
 # Hire and Develop the Best
 
@@ -178,14 +162,11 @@
 - **Managing is a privilege, not a right**: being a strong individual contributor doesn't mean you should manage. The privilege comes with the responsibility to actively coach your team.
 - **The best managers aren't always the nicest**: the most impactful ones recognized strengths AND identified where you needed to grow to reach your full potential.
 
-## My example: Eagle Scout service project
-- **Situation**: led a 7-month community service project building picnic tables for a farm in Columbia, Maryland.
-- **Action**
-  - [How you recruited volunteers and matched people to tasks]
-  - [How you taught or coached less experienced volunteers or younger scouts]
-  - [Any feedback you gave, or how you raised the quality of the work]
-- **Result**: [number of tables, volunteers, hours; what the people you led went on to do]
-- **Hire and Develop the Best angle**: developed the people on my team by teaching skills and giving honest feedback so the work met a high bar.
+## Common questions
+- Tell me about a time you mentored or taught someone.
+- Tell me about a time you gave someone difficult feedback.
+- Tell me about a time you helped a teammate improve.
+- Tell me about a time you organized people around their strengths.
 
 # Insist on the Highest Standards
 
@@ -205,16 +186,11 @@
 - **Standards slip and must be won back**: most companies, Amazon likely included, relaxed standards during the pandemic. Getting back to them is a fight worth fighting.
 - **Companies that keep raising the bar win**: customers gravitate to companies that keep expanding what's possible for them.
 
-## My example: Verbatim chunking bug
-- **Situation**: Verbatim was returning low-quality answers and wrong timestamps, with no errors. It failed silently.
-- **Action**
-  - Didn't ship around it or accept "mostly works." Added logging to trace the chunking pipeline and spent about 5 hours finding the root cause.
-  - Root cause: short transcript segments near chunk boundaries were getting cut off between chunks.
-  - Fixed it at the source so it stayed fixed:
-    - Carried a trailing-overlap tail across chunk boundaries.
-    - Checked each segment's word count before adding it, and deferred it to the next chunk if it would push the current one over ~500 words, instead of splitting it.
-- **Result**: [answer quality and timestamp accuracy after the fix; add a before/after measure if you have one]
-- **Insist on the Highest Standards angle**: refused to accept a silent quality defect, found the real root cause, and fixed it so the problem couldn't come back.
+## Common questions
+- Tell me about a time you refused to compromise on quality.
+- Tell me about a time you weren't satisfied with "good enough."
+- Tell me about a time you made sure a problem was fixed for good, not just patched.
+- How do you make sure your work is correct before shipping it?
 
 # Think Big
 
@@ -241,14 +217,10 @@
   - **Automotive**: reinventing how people buy and consume automotive products.
   - **Healthcare**: reinventing a customer experience that has long felt hopeless in the U.S.
 
-## My example: [project]
-- **Situation**: [the problem or opportunity, and what the "small" version would have been]
-- **Action**
-  - [The bigger vision you set, and why]
-  - [How you communicated it or got others or clients on board]
-  - [Risks you took to pursue it]
-- **Result**: [what it led to]
-- **Think Big angle**: [pushed past the obvious, incremental solution toward a bolder one that served customers better]
+## Common questions
+- Tell me about a time you proposed a bold idea or took a big risk.
+- Tell me about a time you went beyond the obvious, incremental solution.
+- Tell me about a time you had a long-term vision for a project and got others on board.
 
 # Bias for Action
 
@@ -273,14 +245,11 @@
   - You can be fast and keep high standards.
 - **The world's biggest startup**: behave like a startup and keep asking why we can't move faster for customers.
 
-## My example: Verbatim async ingestion
-- **Situation**: Verbatim needed to process videos (transcribe, chunk, embed) without making users wait on the request.
-- **Action**
-  - Chose background goroutines over a full job queue to ship ingestion faster. It's a two-way door: the processing logic can move behind a queue later without a rewrite.
-  - Kept it safe in the meantime with a 10-minute timeout and recover() for panic safety.
-  - Knew and named the limitation: a server restart mid-processing leaves a video stuck in "processing," since nothing reconciles it on startup.
-- **Result**: [shipped async ingestion to the client by X; the limitation hasn't caused issues / plan to add a queue]
-- **Bias for Action angle**: treated a reversible infrastructure choice as a two-way door, shipped quickly with safeguards, and documented the known trade-off instead of over-engineering upfront.
+## Common questions
+- Tell me about a time you made a decision quickly with incomplete information.
+- Tell me about a time you took a calculated risk.
+- Tell me about a time you had to act fast under a tight deadline.
+- Tell me about a time you adapted when something outside your control threatened the plan.
 
 # Frugality
 
@@ -306,13 +275,10 @@
   - Even in higher-margin businesses, don't spend more just because margins allow it.
 - **Big teams aren't a career path**: Amazon values people who build great experiences and businesses as leanly as possible, including in promotions.
 
-## My example: [project]
-- **Situation**: [limited budget, time, or people]
-- **Action**
-  - [What you did instead of spending more or adding people]
-  - [Specific cost-conscious choices and the reasoning behind them]
-- **Result**: [what you delivered, and the cost or resources saved]
-- **Frugality angle**: delivered a working result within tight constraints by being resourceful instead of adding cost.
+## Common questions
+- Tell me about a time you accomplished more with fewer resources.
+- Tell me about a time you saved money, time, or effort on a project.
+- Tell me about a time you worked within a tight budget or constraint.
 
 # Earn Trust
 
@@ -340,14 +306,11 @@
   - The rest of the deck had no more errors. Jassy wasn't resentful. He learned about diving deep and owning the details.
   - He earned trust back by owning the mistake, being openly self-critical, and delivering a more accurate presentation the next time to a broader group.
 
-## My example: [project]
-- **Situation**: [a mistake you made, or a time you had to deliver bad news or disagree]
-- **Action**
-  - [How you owned it openly instead of hiding or minimizing it]
-  - [How you communicated it, and to whom]
-  - [How you fixed it and made sure it didn't happen again]
-- **Result**: [outcome, and how the relationship or trust held up]
-- **Earn Trust angle**: owned my mistake candidly, fixed it, and delivered, which strengthened trust instead of damaging it.
+## Common questions
+- Tell me about a time you made a mistake.
+- Tell me about a time you received critical feedback.
+- Tell me about a time you had to tell someone something they didn't want to hear.
+- Tell me about a time you worked with a difficult coworker.
 
 # Dive Deep
 
@@ -370,17 +333,11 @@
   - A single complaint, a friend's story, or a customer email can reveal a real problem the metric hides.
   - At Amazon's scale, even a 0.5–1% impact means millions of people.
 
-## My example: Verbatim chunking bug
-- **Situation**: Verbatim wasn't throwing errors, and nothing looked broken at a high level. But answers were low quality and timestamps were wrong.
-- **Action**
-  - Treated the bad answers as a signal of a real problem instead of blaming the model.
-  - Added logging through the chunking pipeline to inspect what was actually being stored in each chunk.
-  - Traced the cause to the details: short transcript segments near chunk boundaries were being cut off between chunks.
-  - Fixed it at the root:
-    - Carried a trailing-overlap tail across chunk boundaries.
-    - Checked each segment's word count before adding it, and deferred it to the next chunk if it would push the current one over ~500 words, instead of splitting it.
-- **Result**: [answer quality and timestamp accuracy after the fix; add a before/after measure if you have one]
-- **Dive Deep angle**: didn't trust surface-level "it's working." Followed the bad outputs down to the exact chunk boundaries, found a silent defect, and fixed the root cause.
+## Common questions
+- Tell me about a time you dug into data or logs to find a root cause.
+- Tell me about the most challenging technical problem you've solved.
+- Tell me about a time something looked fine on the surface but wasn't.
+- Tell me about a time you had to understand a system in detail to fix it.
 
 # Have Backbone; Disagree and Commit
 
@@ -405,14 +362,11 @@
   - Businesses that can't make decisions stagnate.
   - With huge opportunity spaces and capable competitors, everyone's energy has to go in the same direction.
 
-## My example: [project]
-- **Situation**: [a decision you disagreed with: client, teammate, manager, professor]
-- **Action**
-  - [How you raised the disagreement respectfully, with data or reasoning]
-  - [How the decision was made, and whether it went your way]
-  - [How you committed fully once it was decided]
-- **Result**: [outcome of the decision and of your commitment]
-- **Disagree and Commit angle**: challenged the decision respectfully with reasoning, then fully committed and delivered once it was made.
+## Common questions
+- Tell me about a time you disagreed with a teammate or manager.
+- Tell me about a time you pushed back on a decision or on scope.
+- Tell me about a time you committed to a decision you didn't agree with.
+- What would you have done if the decision had gone the other way?
 
 # Deliver Results
 
@@ -433,16 +387,11 @@
   - Launch, see how customers react, get feedback, and iterate.
   - The best teams launch fast and organized, then keep iterating. After 7–9 iterations, you have something that really matters to customers.
 
-## My example: UMD research lab image pipeline
-- **Situation**: the lab generated 200–300 test images per day that had to be sorted by hand by honeycomb model, tension strength, and date.
-- **Action**
-  - Built and shipped an automated Python/PowerShell pipeline that read EXIF metadata and sorted images into model → tension → date folders.
-  - Ran it on scheduled polling so it kept processing new images continuously.
-  - Handled failures: unreadable images were caught, logged, and moved to a separate folder instead of breaking the run.
-  - [A setback you hit while building it, and how you got past it]
-  - [Any iteration after the first version went live]
-- **Result**: processed 1,200+ images per week and saved about 8 hours per week of manual work.
-- **Deliver Results angle**: delivered a working, reliable tool with measurable impact, and kept it running as new data came in.
+## Common questions
+- Tell me about a time you delivered despite a major setback.
+- Tell me about a time a project didn't go as expected.
+- Tell me about a time you met a tough deadline.
+- What's the accomplishment you're proudest of?
 
 # Strive to be Earth's Best Employer
 
@@ -463,13 +412,10 @@
   - **Great teammates**: smart, passionate, motivated people working together on a shared mission.
 - **Room to improve**: safety in the fulfillment network, better manager training for developing people's careers, and a more diverse and inclusive workforce.
 
-## My example: [project]
-- **Situation**: [a team or group you were part of or led]
-- **Action**
-  - [How you made the environment better for others: inclusion, support, growth, morale]
-  - [How you helped someone grow or feel empowered]
-- **Result**: [impact on the people and on the work]
-- **Earth's Best Employer angle**: improved the environment for the people around me so they could grow and do their best work.
+## Common questions
+- Tell me about a time you made your team or group a better place to work.
+- Tell me about a time you supported a teammate who was struggling.
+- Tell me about a time you helped someone grow or feel more confident.
 
 # Success and Scale Bring Broad Responsibility
 
@@ -493,10 +439,7 @@
   - **Volunteering**: 150,000+ Amazonians volunteered in a year.
 - **Evolution**: Amazon waited until it was profitable to invest heavily in communities, and has since become the top corporate giver in Puget Sound.
 
-## My example: Eagle Scout service project
-- **Situation**: [what the farm in Columbia, Maryland needed, and why it mattered to the community]
-- **Action**
-  - Led a 7-month community service project building picnic tables for the farm.
-  - [How you planned it, gathered materials or funding, and organized volunteers]
-- **Result**: [number of tables built, number of volunteers, how the farm and community use them]
-- **Broad Responsibility angle**: used my skills and leadership to leave a community resource better than I found it.
+## Common questions
+- Tell me about a time you considered the impact of your work beyond your immediate project.
+- Tell me about a time you left something better than you found it.
+- Tell me about a time you gave back to your community.
